@@ -6,7 +6,7 @@
   <link href="https://vicosong.github.io/atom.xml" rel="self"/>
   
   <link href="https://vicosong.github.io/"/>
-  <updated>2022-05-04T03:55:00.550Z</updated>
+  <updated>2022-05-06T05:59:55.004Z</updated>
   <id>https://vicosong.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>垃圾收集器介绍</title>
+    <link href="https://vicosong.github.io/2022/05/06/la-ji-shou-ji-qi-jie-shao/"/>
+    <id>https://vicosong.github.io/2022/05/06/la-ji-shou-ji-qi-jie-shao/</id>
+    <published>2022-05-06T02:24:48.000Z</published>
+    <updated>2022-05-06T05:59:55.004Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-查看使用的何种垃圾收集器&quot;&gt;&lt;a href=&quot;#1-查看使用的何种垃圾收集器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JVM" scheme="https://vicosong.github.io/categories/JVM/"/>
+    
+    
+    <category term="垃圾收集器" scheme="https://vicosong.github.io/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>windows快捷操作</title>
