@@ -6,7 +6,7 @@
   <link href="https://vicosong.github.io/atom.xml" rel="self"/>
   
   <link href="https://vicosong.github.io/"/>
-  <updated>2022-05-06T05:59:55.004Z</updated>
+  <updated>2022-05-08T16:32:46.448Z</updated>
   <id>https://vicosong.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM垃圾回收算法</title>
+    <link href="https://vicosong.github.io/2022/05/08/jvm-la-ji-hui-shou-suan-fa/"/>
+    <id>https://vicosong.github.io/2022/05/08/jvm-la-ji-hui-shou-suan-fa/</id>
+    <published>2022-05-08T14:21:58.000Z</published>
+    <updated>2022-05-08T16:32:46.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;1-垃圾回收需要做什么&quot;&gt;&lt;a href=&quot;#1-垃圾回收需要做什么&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="JVM" scheme="https://vicosong.github.io/categories/JVM/"/>
+    
+    
+    <category term="垃圾回收算法" scheme="https://vicosong.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>垃圾收集器介绍</title>

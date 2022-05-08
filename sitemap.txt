@@ -1,3 +1,4 @@
+https://vicosong.github.io/2022/05/08/jvm-la-ji-hui-shou-suan-fa/
 https://vicosong.github.io/2022/05/06/la-ji-shou-ji-qi-jie-shao/
 https://vicosong.github.io/404/index.html
 https://vicosong.github.io/friends/index.html
@@ -8,9 +9,10 @@ https://vicosong.github.io/categories/index.html
 https://vicosong.github.io/2022/05/03/windows-kuai-jie-cao-zuo/
 https://vicosong.github.io/2022/03/12/hexo-github-da-jian-ge-ren-bo-ke/
 https://vicosong.github.io/
+https://vicosong.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/
+https://vicosong.github.io/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/
 https://vicosong.github.io/tags/windows/
 https://vicosong.github.io/tags/hexo/
-https://vicosong.github.io/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/
+https://vicosong.github.io/categories/JVM/
 https://vicosong.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
 https://vicosong.github.io/categories/%E5%8D%9A%E5%AE%A2/
-https://vicosong.github.io/categories/JVM/
