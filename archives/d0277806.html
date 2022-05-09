@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-
+ 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo+github搭建个人博客, Java, 后端, SQL, 系统设计, 架构">
+    <meta name="keywords" content="windows快捷操作, Java, 后端, SQL, 系统设计, 架构">
     <meta name="description" content="技术分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo+github搭建个人博客 | Keep Loving Keep Moving</title>
+    <title>windows快捷操作 | Keep Loving Keep Moving</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo+github搭建个人博客</h1>
+                    <h1 class="description center-align post-title">windows快捷操作</h1>
                 </div>
             </div>
         </div>
@@ -412,8 +412,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
+                            <a href="/tags/windows/">
+                                <span class="chip bg-color">windows</span>
                             </a>
                         
                     </div>
@@ -424,8 +424,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                博客
+                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                操作系统
                             </a>
                         
                     </div>
@@ -437,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-03-12
+                    2022-05-03
                 </div>
                 
 
@@ -461,57 +461,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p>下载地址：</p>
-<p>[Node.js]: </p>
-<p>检查是否安装成功：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;node <span class="token operator">-</span>v
-v16<span class="token punctuation">.</span>14<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><p>下载地址：</p>
-<p>​    检查是否安装成功</p>
-<p>​        右键菜单出现Git Bash Here说明安装成功</p>
-<p>安装：hexo-deployer-git</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>安装</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;npm install <span class="token operator">-</span>g hexo-<span class="token function">cli</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>​    安装完成后进入想存放blog的目录右键Git Bash Here</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 建站</span>
-$ hexo init blog
-INFO  Cloning hexo-starter https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/hexojs/hexo-starter<span class="token punctuation">.</span>git
-INFO  Install dependencies
-INFO  <span class="token function">Start</span> blogging with Hexo!
-$ cd blog
-$ npm install
-<span class="token comment">## 生成静态文件</span>
-$ npm g
-<span class="token comment">## 启动服务</span>
-$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​    </p>
-<h2 id="4-更换主题"><a href="#4-更换主题" class="headerlink" title="4.更换主题"></a>4.更换主题</h2><p>主题地址：</p>
-<p>点击选中的主题跳转到Github可以选择下载成zip解压到theme目录下</p>
-<p>或者在theme目录下执行git clone(git和先和github关联起来)</p>
-<pre class="line-numbers language-none"><code class="language-none">$ git clone git@github.com:XPoet/hexo-theme-keep.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>​    打开_config.yml找到theme修改为下载主题的名字</p>
-<p>​        theme: hexo-theme-keep</p>
-<h2 id="5-关联Github"><a href="#5-关联Github" class="headerlink" title="5.关联Github"></a>5.关联Github</h2><p>​    登录个人Github点击New repository填好仓库名点击 Create repository</p>
-<p>   复制新建仓库的地址然后打开_config.yml配置如下</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">deploy</span><span class="token punctuation">:</span>
-<span class="token attr-name">  type</span><span class="token punctuation">:</span> <span class="token attr-value">'git'</span>
-<span class="token attr-name">  repo</span><span class="token punctuation">:</span> <span class="token attr-value">https://github.com/VicoSong/vico.github.io.git</span>
-<span class="token attr-name">  branch</span><span class="token punctuation">:</span> <span class="token attr-value">master</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>打开命令行输入：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo g
-$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>访问 ：<a target="_blank" rel="noopener" href="https://github.com/VicoSong/vico.github.io.git%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%95%88%E6%9E%9C">https://github.com/VicoSong/vico.github.io.git可以看到效果</a></p>
-<p>参考：</p>
+                <p>1.打开服务面板 ： services.msc</p>
+<p>2.打开运行面板：windos + R</p>
+<p>3.打开任务管理器： ctrl+shfit+esc/taskmgr</p>
+<p>4.所有窗口最小化：Win+D</p>
+<p>5.打开“开始”菜单： ESC+ctrl</p>
+<p>6.快速切换到某个窗口：alt+tab</p>
+<p>7.快速关闭浏览器窗口：ctrl+W</p>
+<p>8.在浏览器的所有窗口快速来回切换：ctrl+tab</p>
+<p>9.打开资源管理器：win+E</p>
+<p>10.清屏：cls</p>
+<p>11.cmd: win+R然后输入cmd</p>
+<p>12.注册表：regedit</p>
+<p>13.计算器：clac</p>
+<p>14.远程桌面连接：mstsc</p>
+<p>15.ODBC数据源管理器：odbcad32</p>
+<p>16.计算机管理：compmgmt.msc</p>
+<p>17.系统配置：msconfig</p>
+<p>18.磁盘管理：diskmgmt.msc</p>
+<p>19.控制面板:control</p>
+<p>20.测试网络是否通：ping</p>
+<p>21.测试是否开放某个端口：telnet [域名或者IP] [端口]</p>
+<p>22.测试网络路由：<strong>tracert</strong> </p>
+<p>23.查看与配置网络：<strong>ipconfig</strong></p>
+<p>24.查看本机DNS服务器/域名ip地址解析：<strong>nslookup</strong></p>
+<p>25.打开记事本：notepad</p>
+<p>26.组策略：gpedit.msc</p>
+<p>27.60秒倒计时关机命令：shutdown</p>
+<p>28.打开资源管理器：explorer</p>
+<p>29.证书管理：certmgr.msc</p>
+<p>30.启动字符映射表:charmap</p>
+<p>31.磁盘碎片整理：dfrg.msc</p>
+<p>32.屏幕分辨率：desk.cpl</p>
+<p>33.Windows防火墙：firewall.cpl</p>
+<p>34.共享文件夹管理器:fsmgmt.msc</p>
+<p>35.设备管理器:hdwwiz.cpl/devmgmt.msc</p>
+<p>36.注销命令：logoff</p>
+<p>37.声音：mmsys.cpl</p>
+<p>38.放大镜实用程序：magnify</p>
+<p>39.显示内存使用情况：mem.exe</p>
+<p>40.打开控制台：mmc</p>
+<p>41.程序和功能：appwiz.cpl</p>
+<p>42.系统信息：msinfo32</p>
+<p>43.画图：mspaint</p>
+<p>44.网络连接：ncpa.cpl</p>
+<p>45.打开记事本：notepad：</p>
+<p>46.计算机性能监测器：perfmon</p>
+<p>47.电源选项：powercfg.cpl</p>
+<p>48.系统还原：rstrui</p>
+<p>49.本地安全策略：secpol.msc</p>
+<p>50.Windows激活，查看系统激活信息：slui</p>
+<p>51.截图工具，支持无规则截图：snippingtool</p>
+<p>52.系统属性：sysdm.cpl</p>
+<p>53.日期和时间：timedate.cpl</p>
+<p>54.写字板：write</p>
+<p>55.垃圾整理：cleanmgr</p>
+<p>56.无线连接：Irprops.cpl</p>
+<p>57.关于Windows：winver</p>
+<p>58.检查DirectX信息:dxdiag</p>
+<p>59.系统组件服务:dcomcnfg</p>
+<p>60.事件查看器:eventvwr</p>
+<p>61.打开屏幕键盘:osk</p>
+<p>62.音量控制程序:sndvol</p>
 
                 
             </div>
@@ -538,7 +549,7 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://vicosong.github.io/2022/03/12/hexo-github-da-jian-ge-ren-bo-ke/">https://vicosong.github.io/2022/03/12/hexo-github-da-jian-ge-ren-bo-ke/</a>
+                    <a href="https://vicosong.github.io/archives/d0277806.html">https://vicosong.github.io/archives/d0277806.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,8 +587,8 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
+                                <a href="/tags/windows/">
+                                    <span class="chip bg-color">windows</span>
                                 </a>
                             
                         </div>
@@ -625,13 +636,13 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/05/03/windows-kuai-jie-cao-zuo/">
+                <a href="/archives/e321971f.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="windows快捷操作">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="垃圾收集器介绍">
                         
-                        <span class="card-title">windows快捷操作</span>
+                        <span class="card-title">垃圾收集器介绍</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -642,14 +653,14 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    操作系统
+                            <a href="/categories/JVM/" class="post-category">
+                                    JVM
                                 </a>
                             
                             
@@ -659,8 +670,8 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/windows/">
-                        <span class="chip bg-color">windows</span>
+                    <a href="/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
+                        <span class="chip bg-color">垃圾收集器</span>
                     </a>
                     
                 </div>
@@ -671,10 +682,10 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/03/12/hexo-github-da-jian-ge-ren-bo-ke/">
+                <a href="/archives/be8880ea.html">
                     <div class="card-image">
                         
                         
@@ -705,7 +716,6 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -908,7 +918,7 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">vicoSong</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
@@ -940,7 +950,7 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 
 
 
-    <a href="mailto:1663093964@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1663093964@qq.com" rel="external nofollow noreferrer" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -950,7 +960,7 @@ $ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1663093964" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1663093964" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1663093964" rel="external nofollow noreferrer" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1663093964" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 

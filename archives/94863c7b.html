@@ -1,10 +1,10 @@
 <!DOCTYPE HTML>
 <html lang="zh-CN">
 
-
+ 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="windows快捷操作, Java, 后端, SQL, 系统设计, 架构">
+    <meta name="keywords" content="JVM垃圾回收算法, Java, 后端, SQL, 系统设计, 架构">
     <meta name="description" content="技术分享">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>windows快捷操作 | Keep Loving Keep Moving</title>
+    <title>JVM垃圾回收算法 | Keep Loving Keep Moving</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -291,12 +291,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">windows快捷操作</h1>
+                    <h1 class="description center-align post-title">JVM垃圾回收算法</h1>
                 </div>
             </div>
         </div>
@@ -412,8 +412,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/windows/">
-                                <span class="chip bg-color">windows</span>
+                            <a href="/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">垃圾回收算法</span>
                             </a>
                         
                     </div>
@@ -424,8 +424,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                操作系统
+                            <a href="/categories/JVM/" class="post-category">
+                                JVM
                             </a>
                         
                     </div>
@@ -437,7 +437,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-05-03
+                    2022-05-08
                 </div>
                 
 
@@ -461,68 +461,168 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>1.打开服务面板 ： services.msc</p>
-<p>2.打开运行面板：windos + R</p>
-<p>3.打开任务管理器： ctrl+shfit+esc/taskmgr</p>
-<p>4.所有窗口最小化：Win+D</p>
-<p>5.打开“开始”菜单： ESC+ctrl</p>
-<p>6.快速切换到某个窗口：alt+tab</p>
-<p>7.快速关闭浏览器窗口：ctrl+W</p>
-<p>8.在浏览器的所有窗口快速来回切换：ctrl+tab</p>
-<p>9.打开资源管理器：win+E</p>
-<p>10.清屏：cls</p>
-<p>11.cmd: win+R然后输入cmd</p>
-<p>12.注册表：regedit</p>
-<p>13.计算器：clac</p>
-<p>14.远程桌面连接：mstsc</p>
-<p>15.ODBC数据源管理器：odbcad32</p>
-<p>16.计算机管理：compmgmt.msc</p>
-<p>17.系统配置：msconfig</p>
-<p>18.磁盘管理：diskmgmt.msc</p>
-<p>19.控制面板:control</p>
-<p>20.测试网络是否通：ping</p>
-<p>21.测试是否开放某个端口：telnet [域名或者IP] [端口]</p>
-<p>22.测试网络路由：<strong>tracert</strong> </p>
-<p>23.查看与配置网络：<strong>ipconfig</strong></p>
-<p>24.查看本机DNS服务器/域名ip地址解析：<strong>nslookup</strong></p>
-<p>25.打开记事本：notepad</p>
-<p>26.组策略：gpedit.msc</p>
-<p>27.60秒倒计时关机命令：shutdown</p>
-<p>28.打开资源管理器：explorer</p>
-<p>29.证书管理：certmgr.msc</p>
-<p>30.启动字符映射表:charmap</p>
-<p>31.磁盘碎片整理：dfrg.msc</p>
-<p>32.屏幕分辨率：desk.cpl</p>
-<p>33.Windows防火墙：firewall.cpl</p>
-<p>34.共享文件夹管理器:fsmgmt.msc</p>
-<p>35.设备管理器:hdwwiz.cpl/devmgmt.msc</p>
-<p>36.注销命令：logoff</p>
-<p>37.声音：mmsys.cpl</p>
-<p>38.放大镜实用程序：magnify</p>
-<p>39.显示内存使用情况：mem.exe</p>
-<p>40.打开控制台：mmc</p>
-<p>41.程序和功能：appwiz.cpl</p>
-<p>42.系统信息：msinfo32</p>
-<p>43.画图：mspaint</p>
-<p>44.网络连接：ncpa.cpl</p>
-<p>45.打开记事本：notepad：</p>
-<p>46.计算机性能监测器：perfmon</p>
-<p>47.电源选项：powercfg.cpl</p>
-<p>48.系统还原：rstrui</p>
-<p>49.本地安全策略：secpol.msc</p>
-<p>50.Windows激活，查看系统激活信息：slui</p>
-<p>51.截图工具，支持无规则截图：snippingtool</p>
-<p>52.系统属性：sysdm.cpl</p>
-<p>53.日期和时间：timedate.cpl</p>
-<p>54.写字板：write</p>
-<p>55.垃圾整理：cleanmgr</p>
-<p>56.无线连接：Irprops.cpl</p>
-<p>57.关于Windows：winver</p>
-<p>58.检查DirectX信息:dxdiag</p>
-<p>59.系统组件服务:dcomcnfg</p>
-<p>60.事件查看器:eventvwr</p>
-<p>61.打开屏幕键盘:osk</p>
-<p>62.音量控制程序:sndvol</p>
+                <h2 id="1-垃圾回收需要做什么"><a href="#1-垃圾回收需要做什么" class="headerlink" title="1.垃圾回收需要做什么"></a>1.垃圾回收需要做什么</h2><p>Java垃圾回收器需要做的三件事：</p>
+<blockquote>
+<p>1、哪些内存需要回收？即如何判断对象已经死亡；</p>
+<p>2、什么时候回收？即GC发生在什么时候？需要了解GC策略，与垃圾回收器实现有关；</p>
+<p>3、如何回收？即需要了解垃圾回收算法，及算法的实现–垃圾回收器；</p>
+</blockquote>
+<h2 id="2-如何判断对象可被回收"><a href="#2-如何判断对象可被回收" class="headerlink" title="2.如何判断对象可被回收"></a>2.如何判断对象可被回收</h2><p>​     垃圾收集器对堆进行回收前，首先要确定堆中的对象哪些还”存活”，哪些已经”死去”。有两种算法，分别是引用计数算法(Recference Counting)和可达性分析算法(Reachability Analysis)。</p>
+<h3 id="2-1-引用计数算法"><a href="#2-1-引用计数算法" class="headerlink" title="2.1 引用计数算法"></a>2.1 引用计数算法</h3><p>2.1.1 算法思路</p>
+<p> 给对象添加一个引用计数器，每当有一个地方引用它，计数器加1；当引用失效，计数器值减1；任何时刻计数器值为0，则认为对象是不再被使用的；</p>
+<h4 id="2-1-2-优点"><a href="#2-1-2-优点" class="headerlink" title="2.1.2 优点"></a>2.1.2 优点</h4><ul>
+<li><p>实现简单、垃圾便于辨识；</p>
+</li>
+<li><p>判定效率高，回收没有延迟。</p>
+</li>
+</ul>
+<h4 id="2-1-2-缺点"><a href="#2-1-2-缺点" class="headerlink" title="2.1.2 缺点"></a>2.1.2 缺点</h4><ul>
+<li>需要单独的字段存储计数器，额外的存储空间开销</li>
+<li>需要更新计数器，伴随着加法和减法操作，带来时间开销</li>
+<li>无法处理循环引用的情况</li>
+</ul>
+<p>循环引用的例子：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RefCountGC</span> <span class="token punctuation">{</span>
+    <span class="token comment">//这个成员属性唯一的作用就是占用一点内存</span>
+    <span class="token keyword">private</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bigSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//5MB</span>
+
+    <span class="token class-name">Object</span> reference <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">RefCountGC</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">RefCountGC</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        obj1<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj2<span class="token punctuation">;</span>
+        obj2<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
+
+        obj1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        obj2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        <span class="token comment">//显式的执行垃圾回收行为</span>
+        <span class="token comment">//这里发生GC，obj1和obj2能否被回收？ 能被回收，是因为JVM采用的不是引用计数算法。所以obj1和obj2能被回收。这里反向证明了JVM没有采用引用计数算法。</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="2-2-可达性分析算法"><a href="#2-2-可达性分析算法" class="headerlink" title="2.2 可达性分析算法"></a>2.2 可达性分析算法</h3><h4 id="2-2-1-算法思路"><a href="#2-2-1-算法思路" class="headerlink" title="2.2.1 算法思路"></a>2.2.1 算法思路</h4><p>​     通过一系列的GC Roots的对象作为起始点，从这些根节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。</p>
+<p><img src="https://s2.loli.net/2022/05/09/4QZu1AGdpfvkNrR.png" alt="GC Roots"></p>
+<h4 id="2-2-2-GC-Roots对象（两栈两方法）"><a href="#2-2-2-GC-Roots对象（两栈两方法）" class="headerlink" title="2.2.2  GC Roots对象（两栈两方法）"></a>2.2.2  <strong>GC Roots对象</strong>（两栈两方法）</h4><ul>
+<li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
+<li>本地方法栈中 JNI（即一般说的 Native 方法）引用的对象</li>
+<li>方法区中类静态属性引用的对象</li>
+<li>方法区中常量引用的对象</li>
+</ul>
+<h4 id="2-2-3-优点"><a href="#2-2-3-优点" class="headerlink" title="2.2.3 优点"></a>2.2.3 优点</h4><p> 更加精确和严谨，可以分析出循环数据结构相互引用的情况；主流的编程语言Java c#的选择。</p>
+<h4 id="2-2-4-缺点"><a href="#2-2-4-缺点" class="headerlink" title="2.2.4 缺点"></a>2.2.4 缺点</h4><ul>
+<li><p>消耗大量时间</p>
+<blockquote>
+<p>从前面可达性分析知道，GC  Roots主要在全局性的引用（常量或静态属性）和执行上下文中（栈帧中的本地变量表）；<br> 要在这些大量的数据中，逐个检查引用，会消耗很多时间；</p>
+</blockquote>
+</li>
+<li><p>GC停顿</p>
+<blockquote>
+<p> 可达性分析期间需要保证整个执行系统的一致性，对象的引用关系不能发生变化；<br> 导致GC进行时必须停顿所有Java执行线程（称为”Stop The World”）；<br> （几乎不会发生停顿的CMS收集器中，枚举根节点时也是必须要停顿的） Stop The World： 是JVM在后台自动发起和自动完成的； 在用户不可见的情况下，把用户正常的工作线程全部停掉；</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3-判断对象生存还是死亡"><a href="#3-判断对象生存还是死亡" class="headerlink" title="3.判断对象生存还是死亡"></a>3.判断对象生存还是死亡</h2><h3 id="3-1-两次标记过程"><a href="#3-1-两次标记过程" class="headerlink" title="3.1 两次标记过程"></a>3.1 两次标记过程</h3><p>要真正宣告一个对象死亡，至少要经历两次标记过程。</p>
+<p>1、第一次标记</p>
+<p> 在可达性分析后发现到GC Roots没有任何引用链相连时，被第一次标记；并且进行一次筛选：此对象是否必要执行finalize()方法；</p>
+<p>（A）、没有必要执行</p>
+<p> 没有必要执行的情况：（1）、对象没有覆盖finalize()方法；（2）、finalize()方法已经被JVM调用过；这两种情况就可以认为对象已死，可以回收；</p>
+<p>（B）、有必要执行</p>
+<p> 对有必要执行finalize()方法的对象，被放入F-Queue队列中；稍后在JVM自动建立、低优先级的Finalizer线程（可能多个线程）中触发这个方法；</p>
+<p>2、第二次标记</p>
+<p> GC将对F-Queue队列中的对象进行第二次小规模标记；finalize()方法是对象逃脱死亡的最后一次机会： （A）、如果对象在其finalize()方法中重新与引用链上任何一个对象建立关联，第二次标记时会将其移出”即将回收”的集合；（B）、如果对象没有，也可以认为对象已死，可以回收了；<br>        一个对象的finalize()方法只会被系统自动调用一次，经过finalize()方法逃脱死亡的对象，第二次不会再调用；</p>
+<h3 id="3-2-finalize-方法"><a href="#3-2-finalize-方法" class="headerlink" title="3.2  finalize()方法"></a>3.2  finalize()方法</h3><p> finalize()是Object类的一个方法，是Java刚诞生时为了使C/C++程序员容易接受它所做出的一个妥协，但不要当作类似C/C++的析构函数；因为它执行的时间不确定，甚至是否被执行也不确定（Java程序的不正常退出），而且运行代价高昂，无法保证各个对象的调用顺序（甚至有不同线程中调用）；如果需要”释放资源”，可以定义显式的终止方法，并在”try-catch-finally”的finally{}块中保证及时调用，如File相关类的close()方法； 此外，finalize()方法主要有两种用途：</p>
+<p>1、充当”安全网”</p>
+<p> 当显式的终止方法没有调用时，在finalize()方法中发现后发出警告； 但要考虑是否值得付出这样的代价； 如FileInputStream、FileOutputStream、Timer和Connection类中都有这种应用；</p>
+<p>2、与对象的本地对等体有关</p>
+<p> 本地对等体：普通对象调用本地方法（JNI）委托的本地对象；<br>​ 本地对等体不会被GC回收；​<br>​ 如果本地对等体不拥有关键资源，finalize()方法里可以回收它（如C/C++中malloc()，需要调用free()）；​<br>​ 如果有关键资源，必须显式的终止方法；​<br>​ 一般情况下，应尽量避免使用它，甚至可以忘掉它。</p>
+<h2 id="4-HotSpot虚拟机中对象可达性分析的实现"><a href="#4-HotSpot虚拟机中对象可达性分析的实现" class="headerlink" title="4.HotSpot虚拟机中对象可达性分析的实现"></a>4.HotSpot虚拟机中对象可达性分析的实现</h2><h3 id="4-1-枚举根节点"><a href="#4-1-枚举根节点" class="headerlink" title="4.1 枚举根节点"></a>4.1 枚举根节点</h3><p> 枚举根节点也就是查找GC Roots；</p>
+<p> 目前主流JVM都是准确式GC，可以直接得知哪些地方存放着对象引用，所以执行系统停顿下来后，并不需要全部、逐个检查完全局性的和执行上下文中的引用位置；</p>
+<p> 在HotSpot中，是使用一组称为OopMap的数据结构来达到这个目的的；在类加载时，计算对象内什么偏移量上是什么类型的数据；在JIT编译时，也会记录栈和寄存器中的哪些位置是引用；这样GC扫描时就可以直接得知这些信息；</p>
+<h3 id="4-2-安全点"><a href="#4-2-安全点" class="headerlink" title="4.2 安全点"></a>4.2 安全点</h3><h4 id="4-2-1-安全点是什么，为什么需要安全点"><a href="#4-2-1-安全点是什么，为什么需要安全点" class="headerlink" title="4.2.1 安全点是什么，为什么需要安全点"></a>4.2.1 安全点是什么，为什么需要安全点</h4><p> HotSpot在OopMap的帮助下可以快速且准确的完成GC Roots枚举，但是这有一个问题：<br>运行中，非常多的指令都会导致引用关系变化；如果为这些指令都生成对应的OopMap，需要的空间成本太高；<strong>问题解决：</strong></p>
+<p> 只在特定的位置记录OopMap引用关系，这些位置称为安全点（Safepoint）；即程序执行时并非所有地方都能停顿下来开始GC；</p>
+<h4 id="4-2-2-安全点的选定"><a href="#4-2-2-安全点的选定" class="headerlink" title="4.2.2 安全点的选定"></a>4.2.2 安全点的选定</h4><p> 不能太少，否则GC等待时间太长；也不能太多，否则GC过于频繁，增大运行时负荷；所以，基本上是以程序”是否具有让程序长时间执行的特征”为标准选定；”长时间执行”最明显的特征就是指令序列复用，如：方法调用、循环跳转、循环的末尾、异常跳转等； 只有具有这些功能的指令才会产生Safepoint；</p>
+<h4 id="4-2-3-如何在安全点上停顿"><a href="#4-2-3-如何在安全点上停顿" class="headerlink" title="4.2.3 如何在安全点上停顿"></a>4.2.3 如何在安全点上停顿</h4><p> 对于Safepoint，如何在GC发生时让所有线程（不包括JNI线程）运行到其所在最近的Safepoint上再停顿下来？ 主要有两种方案可选：</p>
+<p>（A）、抢先式中断（Preemptive Suspension）</p>
+<p> 不需要线程主动配合，实现如下： （1）、在GC发生时，首先中断所有线程； （2）、如果发现不在Safepoint上的线程，就恢复让其运行到Safepoint上； 现在几乎没有JVM实现采用这种方式；</p>
+<p>（B）、主动式中断（Voluntary Suspension）</p>
+<p> （1）、在GC发生时，不直接操作线程中断，而是仅简单设置一个标志； （2）、让各线程执行时主动去轮询这个标志，发现中断标志为真时就自己中断挂起<br>​ 而轮询标志的地方和Safepoint是重合的；​ 在JIT执行方式下：test指令是HotSpot生成的轮询指令；​ 一条test汇编指令便完成Safepoint轮询和触发线程中断；</p>
+<h3 id="4-3-安全区域"><a href="#4-3-安全区域" class="headerlink" title="4.3 安全区域"></a>4.3 安全区域</h3><h4 id="4-3-1-为什么需要安全区域"><a href="#4-3-1-为什么需要安全区域" class="headerlink" title="4.3.1 为什么需要安全区域"></a>4.3.1 为什么需要安全区域</h4><p> 对于上面的Safepoint还有一个问题： 程序不执行时没有CPU时间（Sleep或Blocked状态），无法运行到Safepoint上再中断挂起；<br>​ 这就需要安全区域来解决；</p>
+<h4 id="4-3-2-什么是安全区域（Safe-Region）"><a href="#4-3-2-什么是安全区域（Safe-Region）" class="headerlink" title="4.3.2 什么是安全区域（Safe Region）"></a>4.3.2 什么是安全区域（Safe Region）</h4><p> 指一段代码片段中，引用关系不会发生变化； 在这个区域中的任意地方开始GC都是安全的；</p>
+<h4 id="4-3-3-如何用安全区域解决问题"><a href="#4-3-3-如何用安全区域解决问题" class="headerlink" title="4.3.3 如何用安全区域解决问题"></a>4.3.3 如何用安全区域解决问题</h4><p> 安全区域解决问题的思路：</p>
+<p> （1）、线程执行进入Safe Region，首先标识自己已经进入Safe Region；</p>
+<p> （2）、线程被唤醒离开Safe Region时，其需要检查系统是否已经完成根节点枚举（或整个GC）；如果已经完成，就继续执行；否则必须等待，直到收到可以安全离开Safe Region的信号通知；</p>
+<p>这样就不会影响标记结果；</p>
+<h2 id="5-垃圾回收算法"><a href="#5-垃圾回收算法" class="headerlink" title="5.垃圾回收算法"></a>5.垃圾回收算法</h2><h3 id="5-1-标记清除"><a href="#5-1-标记清除" class="headerlink" title="5.1 标记清除"></a><strong>5.1 标记清除</strong></h3><p>标记-清除算法将垃圾回收分为两个阶段：<strong>标记阶段和清除阶段</strong>。</p>
+<p><strong>标记</strong>: Collector 从引用根节点开始遍历，<strong>标记所有被引用的对象。一般是在对象的Header中记录为可达对象。</strong><br>       <strong>清除</strong>: Collector对堆内存从头到尾进行线性的遍历，如果发现某个对象在其Header中没有标记为可达对象，则将其回收。这里所谓的清除并不是真的置空，而是把需要清除的对象地址保存在空闲的地址列表里。下次有新对象需要加载时，判断垃圾的位置空间是否够，如果够，就存放。</p>
+<p><img src="https://s2.loli.net/2022/05/09/NcFqAPzhoCGV7TZ.png"><br><strong>适用场合</strong>：</p>
+<ul>
+<li>存活对象较多的情况下比较高效</li>
+<li>适用于年老代（即旧生代）</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>容易产生内存碎片，再来一个比较大的对象时（典型情况：该对象的大小大于空闲表中的每一块儿大小但是小于其中两块儿的和），会提前触发垃圾回收而且需要维护一个空闲列表</li>
+<li>效率不算高（第一次：标记存活对象；第二次：清除没有标记的对象）</li>
+<li>在进行GC的时候，需要停止整个应用程序，导致用户体验差</li>
+</ul>
+<h3 id="5-2-复制算法"><a href="#5-2-复制算法" class="headerlink" title="5.2 复制算法"></a><strong>5.2 复制算法</strong></h3><p>将活着的内存空间分为两块，每次只使用其中一块，在垃圾回收时将正在使用的内存中的存活对象复制到未被使用的内存块中，之后清除正在使用的内存块中的所有对象，交换两个内存的角色，最后完成垃圾收。</p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-fuzhi.png" alt="fuzhi"><br>        在新生代，对常规应用的垃圾回收，一 次通常可以回收70%-99%的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。</p>
+<p><strong>适用场合：</strong></p>
+<ul>
+<li>存活对象较少的情况下比较高效</li>
+<li>扫描了整个空间一次（标记存活对象并复制移动）</li>
+<li>适<strong>用于年轻代（即新生代）</strong>：基本上98%的对象是”朝生夕死”的，存活下来的会很少</li>
+</ul>
+<p><strong>优点：</strong></p>
+<ul>
+<li>没有标记和清除过程，实现简单，运行高效</li>
+<li>复制过去以后保证空间的连续性，不会出现“碎片”问题。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>需要两倍的内存空间</li>
+<li>对于G1这种分拆成为大量region的GC，复制而不是移动，意味着GC需要维护region之间对象引用关系，不管是内存占用或者时间开销也不小</li>
+</ul>
+<h3 id="5-3-标记整理"><a href="#5-3-标记整理" class="headerlink" title="5.3  标记整理"></a><strong>5.3  标记整理</strong></h3><p>复制算法的高效性是建立在存活对象少、垃圾对象多的前提下的。</p>
+<p>这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。</p>
+<p>执行过程：</p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/markcompact.png" alt="markcompact"></p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-compact.png" alt="compact"></p>
+<blockquote>
+<p>标记-压缩算法的最终效果等同于标记-清除算法执行完成后，再进行一次内存碎片整理，因此，也可以把它称为标记-清除-压缩(Mark- Sweep-Compact)算法。<br>        二者的本质差异在于标记-清除算法是一种非移动式的回收算法，标记-压缩是移动式的。是否移动回收后的存活对象是一-项优缺点并存的风险决策。<br>        可以看到，标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存会被清理掉。如此一-来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可，这比维护一个空闲列表显然少了许多开销。</p>
+</blockquote>
+<ul>
+<li>优点:<br>消除了标记-清除算法当中，内存区域分散的缺点，我们需要给新对象分配内存时，JVM只 需要持有一个内存的起始地址即可。消除了复制算法当中，内存减半的高额代价。</li>
+<li>缺点:<br>从效率上来说，标记-整理算法要低于复制算法。移动对象的同时，如果对象被其他对象引用，则还需要调整引用的地址。移动过程中，需要全程暂停用户应用程序。即: STW</li>
+</ul>
+<p><strong>对比三种算法</strong></p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfaduibi.png" alt="lajishoujisuanfaduibi"></p>
+<h3 id="5-4-分代收集算法"><a href="#5-4-分代收集算法" class="headerlink" title="5.4 分代收集算法"></a><strong>5.4 分代收集算法</strong></h3><p>把堆内存分为新生代和老年代，新生代又分为 Eden 区、From Survivor 和 To Survivor。一般新生代中的对象基本上都是朝生夕灭的，每次只有少量对象存活，因此采用复制算法，只需要复制那些少量存活的对象就可以完成垃圾收集；老年代中的对象存活率较高，就采用标记-清除和标记-整理算法来进行回收。</p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-fendai.png" alt="fendailajishoujisuanfa-fendai"></p>
+<p><strong>在这些区域的垃圾回收大概有如下几种情况：</strong></p>
+<blockquote>
+<p>大多数情况下，新的对象都分配在Eden区，当 Eden 区没有空间进行分配时，将进行一次 Minor GC，清理 Eden 区中的无用对象。清理后，Eden 和 From Survivor 中的存活对象如果小于To Survivor 的可用空间则进入To Survivor，否则直接进入老年代）；Eden 和 From Survivor 中还存活且能够进入 To Survivor 的对象年龄增加 1 岁（虚拟机为每个对象定义了一个年龄计数器，每执行一次 Minor GC 年龄加 1），当存活对象的年龄到达一定程度（默认 15 岁）后进入老年代，可以通过 -XX:MaxTenuringThreshold 来设置年龄的值。</p>
+<p>当进行了 Minor GC 后，Eden 还不足以为新对象分配空间（那这个新对象肯定很大），新对象直接进入老年代。</p>
+<p>占 To Survivor 空间一半以上且年龄相等的对象，大于等于该年龄的对象直接进入老年代，比如 Survivor 空间是 10M，有几个年龄为 4 的对象占用总空间已经超过 5M，则年龄大于等于 4 的对象都直接进入老年代，不需要等到 MaxTenuringThreshold 指定的岁数。</p>
+<p>在进行 Minor GC 之前，会判断老年代最大连续可用空间是否大于新生代所有对象总空间，如果大于，说明 Minor GC 是安全的，否则会判断是否允许担保失败，如果允许，判断老年代最大连续可用空间是否大于历次晋升到老年代的对象的平均大小，如果大于，则执行 Minor GC，否则执行 Full GC。</p>
+<p>当在 java 代码里直接调用 System.gc() 时，会建议 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://so.csdn.net/so/search?q=JVM&amp;spm=1001.2101.3001.7020">JVM</a> 进行 Full GC，但一般情况下都会触发 Full GC，一般不建议使用，尽量让虚拟机自己管理 GC 的策略。</p>
+<p>永久代（方法区）中用于存放类信息，jdk1.6 及之前的版本永久代中还存储常量、静态变量等，当永久代的空间不足时，也会触发 Full GC，如果经过 Full GC 还无法满足永久代存放新数据的需求，就会抛出永久代的内存溢出异常。</p>
+<p>大对象（需要大量连续内存的对象）例如很长的数组，会直接进入老年代，如果老年代没有足够的连续大空间来存放，则会进行 Full GC。</p>
+</blockquote>
+<h2 id="6-参考"><a href="#6-参考" class="headerlink" title="6.参考"></a>6.参考</h2><p>1.JVM：引用计数算法和可达性分析算法(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.zhifou.net/blogdetail/183">https://www.zhifou.net/blogdetail/183</a>)</p>
+<p>2.4种JVM垃圾回收算法详解（<a target="_blank" rel="noopener external nofollow noreferrer" href="https://mikechen.cc/7102.html%EF%BC%89">https://mikechen.cc/7102.html）</a></p>
+<p>3.深入理解Java虚拟机（四）之垃圾回收算法(<a target="_blank" rel="noopener external nofollow noreferrer" href="https://www.codenong.com/cs106639755/">https://www.codenong.com/cs106639755/</a>)</p>
 
                 
             </div>
@@ -549,7 +649,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://vicosong.github.io/2022/05/03/windows-kuai-jie-cao-zuo/">https://vicosong.github.io/2022/05/03/windows-kuai-jie-cao-zuo/</a>
+                    <a href="https://vicosong.github.io/archives/94863c7b.html">https://vicosong.github.io/archives/94863c7b.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,8 +687,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/windows/">
-                                    <span class="chip bg-color">windows</span>
+                                <a href="/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">垃圾回收算法</span>
                                 </a>
                             
                         </div>
@@ -632,11 +732,62 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/05/06/la-ji-shou-ji-qi-jie-shao/">
+                <a href="/archives/94863c7b.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="JVM垃圾回收算法">
+                        
+                        <span class="card-title">JVM垃圾回收算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-08
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JVM/" class="post-category">
+                                    JVM
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">垃圾回收算法</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/archives/e321971f.html">
                     <div class="card-image">
                         
                         
@@ -652,9 +803,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -672,55 +823,6 @@
                     
                     <a href="/tags/%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E5%99%A8/">
                         <span class="chip bg-color">垃圾收集器</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/03/12/hexo-github-da-jian-ge-ren-bo-ke/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo+github搭建个人博客">
-                        
-                        <span class="card-title">Hexo+github搭建个人博客</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-12
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="post-category">
-                                    博客
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
                     </a>
                     
                 </div>
@@ -918,7 +1020,7 @@
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">vicoSong</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" rel="external nofollow noreferrer" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
@@ -950,7 +1052,7 @@
 
 
 
-    <a href="mailto:1663093964@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1663093964@qq.com" rel="external nofollow noreferrer" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -960,7 +1062,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1663093964" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1663093964" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1663093964" rel="external nofollow noreferrer" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1663093964" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
