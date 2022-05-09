@@ -577,7 +577,7 @@
 <li>在进行GC的时候，需要停止整个应用程序，导致用户体验差</li>
 </ul>
 <h3 id="5-2-复制算法"><a href="#5-2-复制算法" class="headerlink" title="5.2 复制算法"></a><strong>5.2 复制算法</strong></h3><p>将活着的内存空间分为两块，每次只使用其中一块，在垃圾回收时将正在使用的内存中的存活对象复制到未被使用的内存块中，之后清除正在使用的内存块中的所有对象，交换两个内存的角色，最后完成垃圾收。</p>
-<p><img src="F:%5Cmarkdown%5Cpictures%5Clajishoujisuanfa-fuzhi.png" alt="img"><br>        在新生代，对常规应用的垃圾回收，一 次通常可以回收70%-99%的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。</p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-fuzhi.png" alt="fuzhi"><br>        在新生代，对常规应用的垃圾回收，一 次通常可以回收70%-99%的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。</p>
 <p><strong>适用场合：</strong></p>
 <ul>
 <li>存活对象较少的情况下比较高效</li>
@@ -598,7 +598,7 @@
 <p>这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。</p>
 <p>执行过程：</p>
 <p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/markcompact.png" alt="markcompact"></p>
-<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/https://img-blog.csdnimg.cn/img_convert/4dd8c7cf00fbe5f89386e8b85fe35156.png" alt="img"></p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-compact.png" alt="compact"></p>
 <blockquote>
 <p>标记-压缩算法的最终效果等同于标记-清除算法执行完成后，再进行一次内存碎片整理，因此，也可以把它称为标记-清除-压缩(Mark- Sweep-Compact)算法。<br>        二者的本质差异在于标记-清除算法是一种非移动式的回收算法，标记-压缩是移动式的。是否移动回收后的存活对象是一-项优缺点并存的风险决策。<br>        可以看到，标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存会被清理掉。如此一-来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可，这比维护一个空闲列表显然少了许多开销。</p>
 </blockquote>
@@ -609,7 +609,7 @@
 <p><strong>对比三种算法</strong></p>
 <p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfaduibi.png" alt="lajishoujisuanfaduibi"></p>
 <h3 id="5-4-分代收集算法"><a href="#5-4-分代收集算法" class="headerlink" title="5.4 分代收集算法"></a><strong>5.4 分代收集算法</strong></h3><p>把堆内存分为新生代和老年代，新生代又分为 Eden 区、From Survivor 和 To Survivor。一般新生代中的对象基本上都是朝生夕灭的，每次只有少量对象存活，因此采用复制算法，只需要复制那些少量存活的对象就可以完成垃圾收集；老年代中的对象存活率较高，就采用标记-清除和标记-整理算法来进行回收。</p>
-<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/https://img-blog.csdnimg.cn/img_convert/9c33c58e89d8abd93ea7a37948606962.png" alt="image"></p>
+<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfa-fendai.png" alt="fendailajishoujisuanfa-fendai"></p>
 <p><strong>在这些区域的垃圾回收大概有如下几种情况：</strong></p>
 <blockquote>
 <p>大多数情况下，新的对象都分配在Eden区，当 Eden 区没有空间进行分配时，将进行一次 Minor GC，清理 Eden 区中的无用对象。清理后，Eden 和 From Survivor 中的存活对象如果小于To Survivor 的可用空间则进入To Survivor，否则直接进入老年代）；Eden 和 From Survivor 中还存活且能够进入 To Survivor 的对象年龄增加 1 岁（虚拟机为每个对象定义了一个年龄计数器，每执行一次 Minor GC 年龄加 1），当存活对象的年龄到达一定程度（默认 15 岁）后进入老年代，可以通过 -XX:MaxTenuringThreshold 来设置年龄的值。</p>
