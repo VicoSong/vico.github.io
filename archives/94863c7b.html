@@ -512,7 +512,7 @@
 
 
 <h3 id="2-2-可达性分析算法"><a href="#2-2-可达性分析算法" class="headerlink" title="2.2 可达性分析算法"></a>2.2 可达性分析算法</h3><h4 id="2-2-1-算法思路"><a href="#2-2-1-算法思路" class="headerlink" title="2.2.1 算法思路"></a>2.2.1 算法思路</h4><p>​     通过一系列的GC Roots的对象作为起始点，从这些根节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。</p>
-<p><img src="https://s2.loli.net/2022/05/09/4QZu1AGdpfvkNrR.png" alt="GC Roots"></p>
+<p><img src="https://s2.loli.net/2022/05/09/4QZu1AGdpfvkNrR.png"></p>
 <h4 id="2-2-2-GC-Roots对象（两栈两方法）"><a href="#2-2-2-GC-Roots对象（两栈两方法）" class="headerlink" title="2.2.2  GC Roots对象（两栈两方法）"></a>2.2.2  <strong>GC Roots对象</strong>（两栈两方法）</h4><ul>
 <li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
 <li>本地方法栈中 JNI（即一般说的 Native 方法）引用的对象</li>
@@ -565,7 +565,7 @@
 <p>这样就不会影响标记结果；</p>
 <h2 id="5-垃圾回收算法"><a href="#5-垃圾回收算法" class="headerlink" title="5.垃圾回收算法"></a>5.垃圾回收算法</h2><h3 id="5-1-标记清除"><a href="#5-1-标记清除" class="headerlink" title="5.1 标记清除"></a><strong>5.1 标记清除</strong></h3><p>标记-清除算法将垃圾回收分为两个阶段：<strong>标记阶段和清除阶段</strong>。</p>
 <p><strong>标记</strong>: Collector 从引用根节点开始遍历，<strong>标记所有被引用的对象。一般是在对象的Header中记录为可达对象。</strong><br>       <strong>清除</strong>: Collector对堆内存从头到尾进行线性的遍历，如果发现某个对象在其Header中没有标记为可达对象，则将其回收。这里所谓的清除并不是真的置空，而是把需要清除的对象地址保存在空闲的地址列表里。下次有新对象需要加载时，判断垃圾的位置空间是否够，如果够，就存放。</p>
-<p><img src="https://s2.loli.net/2022/05/09/NcFqAPzhoCGV7TZ.png"><br><strong>适用场合</strong>：</p>
+<p><img src="https://s2.loli.net/2022/05/09/B7sMtOYvWmpJnX2.png"><br><strong>适用场合</strong>：</p>
 <ul>
 <li>存活对象较多的情况下比较高效</li>
 <li>适用于年老代（即旧生代）</li>
@@ -599,7 +599,7 @@
 <p>这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。</p>
 <p>执行过程：</p>
 <p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-markcompact.png"></p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-compact.png" alt="compact"></p>
+<p><img src="https://s2.loli.net/2022/05/10/lVeXL13CiT6cmp2.png"></p>
 <blockquote>
 <p>标记-压缩算法的最终效果等同于标记-清除算法执行完成后，再进行一次内存碎片整理，因此，也可以把它称为标记-清除-压缩(Mark- Sweep-Compact)算法。<br>        二者的本质差异在于标记-清除算法是一种非移动式的回收算法，标记-压缩是移动式的。是否移动回收后的存活对象是一-项优缺点并存的风险决策。<br>        可以看到，标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存会被清理掉。如此一-来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可，这比维护一个空闲列表显然少了许多开销。</p>
 </blockquote>
@@ -608,9 +608,9 @@
 <li>缺点:<br>从效率上来说，标记-整理算法要低于复制算法。移动对象的同时，如果对象被其他对象引用，则还需要调整引用的地址。移动过程中，需要全程暂停用户应用程序。即: STW</li>
 </ul>
 <p><strong>对比三种算法</strong></p>
-<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfaduibi.png" alt="lajishoujisuanfaduibi"></p>
+<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfaduibi.png"></p>
 <h3 id="5-4-分代收集算法"><a href="#5-4-分代收集算法" class="headerlink" title="5.4 分代收集算法"></a><strong>5.4 分代收集算法</strong></h3><p>把堆内存分为新生代和老年代，新生代又分为 Eden 区、From Survivor 和 To Survivor。一般新生代中的对象基本上都是朝生夕灭的，每次只有少量对象存活，因此采用复制算法，只需要复制那些少量存活的对象就可以完成垃圾收集；老年代中的对象存活率较高，就采用标记-清除和标记-整理算法来进行回收。</p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-fendai.png"></p>
+<p><img src="https://s2.loli.net/2022/05/10/mifcXrvFRsPB5uS.png"></p>
 <p><strong>在这些区域的垃圾回收大概有如下几种情况：</strong></p>
 <blockquote>
 <p>大多数情况下，新的对象都分配在Eden区，当 Eden 区没有空间进行分配时，将进行一次 Minor GC，清理 Eden 区中的无用对象。清理后，Eden 和 From Survivor 中的存活对象如果小于To Survivor 的可用空间则进入To Survivor，否则直接进入老年代）；Eden 和 From Survivor 中还存活且能够进入 To Survivor 的对象年龄增加 1 岁（虚拟机为每个对象定义了一个年龄计数器，每执行一次 Minor GC 年龄加 1），当存活对象的年龄到达一定程度（默认 15 岁）后进入老年代，可以通过 -XX:MaxTenuringThreshold 来设置年龄的值。</p>

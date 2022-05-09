@@ -1,503 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hexo+github搭建个人博客</title>
-    <url>/archives/be8880ea.html</url>
-    <content><![CDATA[<h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p>下载地址：</p>
-<p>[Node.js]: </p>
-<p>检查是否安装成功：</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;node <span class="token operator">-</span>v
-v16<span class="token punctuation">.</span>14<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><p>下载地址：</p>
-<p>​    检查是否安装成功</p>
-<p>​        右键菜单出现Git Bash Here说明安装成功</p>
-<p>安装：hexo-deployer-git</p>
-<pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>安装</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;npm install <span class="token operator">-</span>g hexo-<span class="token function">cli</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>​    安装完成后进入想存放blog的目录右键Git Bash Here</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 建站</span>
-$ hexo init blog
-INFO  Cloning hexo-starter https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/hexojs/hexo-starter<span class="token punctuation">.</span>git
-INFO  Install dependencies
-INFO  <span class="token function">Start</span> blogging with Hexo!
-$ cd blog
-$ npm install
-<span class="token comment">## 生成静态文件</span>
-$ npm g
-<span class="token comment">## 启动服务</span>
-$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​    </p>
-<h2 id="4-更换主题"><a href="#4-更换主题" class="headerlink" title="4.更换主题"></a>4.更换主题</h2><p>主题地址：</p>
-<p>点击选中的主题跳转到Github可以选择下载成zip解压到theme目录下</p>
-<p>或者在theme目录下执行git clone(git和先和github关联起来)</p>
-<pre class="line-numbers language-none"><code class="language-none">$ git clone git@github.com:XPoet/hexo-theme-keep.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>​    打开_config.yml找到theme修改为下载主题的名字</p>
-<p>​        theme: hexo-theme-keep</p>
-<h2 id="5-关联Github"><a href="#5-关联Github" class="headerlink" title="5.关联Github"></a>5.关联Github</h2><p>​    登录个人Github点击New repository填好仓库名点击 Create repository</p>
-<p>   复制新建仓库的地址然后打开_config.yml配置如下</p>
-<pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">deploy</span><span class="token punctuation">:</span>
-<span class="token attr-name">  type</span><span class="token punctuation">:</span> <span class="token attr-value">'git'</span>
-<span class="token attr-name">  repo</span><span class="token punctuation">:</span> <span class="token attr-value">https://github.com/VicoSong/vico.github.io.git</span>
-<span class="token attr-name">  branch</span><span class="token punctuation">:</span> <span class="token attr-value">master</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>打开命令行输入：</p>
-<pre class="line-numbers language-none"><code class="language-none">$ hexo g
-$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>访问 ：<a href="https://github.com/VicoSong/vico.github.io.git%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%95%88%E6%9E%9C">https://github.com/VicoSong/vico.github.io.git可以看到效果</a></p>
-<p>参考：</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>JVM垃圾回收算法</title>
+      <link href="/archives/94863c7b.html"/>
+      <url>/archives/94863c7b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-垃圾回收需要做什么"><a href="#1-垃圾回收需要做什么" class="headerlink" title="1.垃圾回收需要做什么"></a>1.垃圾回收需要做什么</h2><p>Java垃圾回收器需要做的三件事：</p><blockquote><p>1、哪些内存需要回收？即如何判断对象已经死亡；</p><p>2、什么时候回收？即GC发生在什么时候？需要了解GC策略，与垃圾回收器实现有关；</p><p>3、如何回收？即需要了解垃圾回收算法，及算法的实现–垃圾回收器；</p></blockquote><h2 id="2-如何判断对象可被回收"><a href="#2-如何判断对象可被回收" class="headerlink" title="2.如何判断对象可被回收"></a>2.如何判断对象可被回收</h2><p>​     垃圾收集器对堆进行回收前，首先要确定堆中的对象哪些还”存活”，哪些已经”死去”。有两种算法，分别是引用计数算法(Recference Counting)和可达性分析算法(Reachability Analysis)。</p><h3 id="2-1-引用计数算法"><a href="#2-1-引用计数算法" class="headerlink" title="2.1 引用计数算法"></a>2.1 引用计数算法</h3><p>2.1.1 算法思路</p><p> 给对象添加一个引用计数器，每当有一个地方引用它，计数器加1；当引用失效，计数器值减1；任何时刻计数器值为0，则认为对象是不再被使用的；</p><h4 id="2-1-2-优点"><a href="#2-1-2-优点" class="headerlink" title="2.1.2 优点"></a>2.1.2 优点</h4><ul><li><p>实现简单、垃圾便于辨识；</p></li><li><p>判定效率高，回收没有延迟。</p></li></ul><h4 id="2-1-2-缺点"><a href="#2-1-2-缺点" class="headerlink" title="2.1.2 缺点"></a>2.1.2 缺点</h4><ul><li>需要单独的字段存储计数器，额外的存储空间开销</li><li>需要更新计数器，伴随着加法和减法操作，带来时间开销</li><li>无法处理循环引用的情况</li></ul><p>循环引用的例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RefCountGC</span> <span class="token punctuation">{</span>    <span class="token comment">//这个成员属性唯一的作用就是占用一点内存</span>    <span class="token keyword">private</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bigSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//5MB</span>    <span class="token class-name">Object</span> reference <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token class-name">RefCountGC</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token class-name">RefCountGC</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        obj1<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj2<span class="token punctuation">;</span>        obj2<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj1<span class="token punctuation">;</span>        obj1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>        obj2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>        <span class="token comment">//显式的执行垃圾回收行为</span>        <span class="token comment">//这里发生GC，obj1和obj2能否被回收？ 能被回收，是因为JVM采用的不是引用计数算法。所以obj1和obj2能被回收。这里反向证明了JVM没有采用引用计数算法。</span>        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">try</span> <span class="token punctuation">{</span>            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h3 id="2-2-可达性分析算法"><a href="#2-2-可达性分析算法" class="headerlink" title="2.2 可达性分析算法"></a>2.2 可达性分析算法</h3><h4 id="2-2-1-算法思路"><a href="#2-2-1-算法思路" class="headerlink" title="2.2.1 算法思路"></a>2.2.1 算法思路</h4><p>​     通过一系列的GC Roots的对象作为起始点，从这些根节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。</p><p><img src="https://s2.loli.net/2022/05/09/4QZu1AGdpfvkNrR.png"></p><h4 id="2-2-2-GC-Roots对象（两栈两方法）"><a href="#2-2-2-GC-Roots对象（两栈两方法）" class="headerlink" title="2.2.2  GC Roots对象（两栈两方法）"></a>2.2.2  <strong>GC Roots对象</strong>（两栈两方法）</h4><ul><li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li><li>本地方法栈中 JNI（即一般说的 Native 方法）引用的对象</li><li>方法区中类静态属性引用的对象</li><li>方法区中常量引用的对象</li></ul><h4 id="2-2-3-优点"><a href="#2-2-3-优点" class="headerlink" title="2.2.3 优点"></a>2.2.3 优点</h4><p> 更加精确和严谨，可以分析出循环数据结构相互引用的情况；主流的编程语言Java c#的选择。</p><h4 id="2-2-4-缺点"><a href="#2-2-4-缺点" class="headerlink" title="2.2.4 缺点"></a>2.2.4 缺点</h4><ul><li><p>消耗大量时间</p><blockquote><p>从前面可达性分析知道，GC  Roots主要在全局性的引用（常量或静态属性）和执行上下文中（栈帧中的本地变量表）；<br> 要在这些大量的数据中，逐个检查引用，会消耗很多时间；</p></blockquote></li><li><p>GC停顿</p><blockquote><p> 可达性分析期间需要保证整个执行系统的一致性，对象的引用关系不能发生变化；<br> 导致GC进行时必须停顿所有Java执行线程（称为”Stop The World”）；<br> （几乎不会发生停顿的CMS收集器中，枚举根节点时也是必须要停顿的） Stop The World： 是JVM在后台自动发起和自动完成的； 在用户不可见的情况下，把用户正常的工作线程全部停掉；</p></blockquote></li></ul><h2 id="3-判断对象生存还是死亡"><a href="#3-判断对象生存还是死亡" class="headerlink" title="3.判断对象生存还是死亡"></a>3.判断对象生存还是死亡</h2><h3 id="3-1-两次标记过程"><a href="#3-1-两次标记过程" class="headerlink" title="3.1 两次标记过程"></a>3.1 两次标记过程</h3><p>要真正宣告一个对象死亡，至少要经历两次标记过程。</p><p>1、第一次标记</p><p> 在可达性分析后发现到GC Roots没有任何引用链相连时，被第一次标记；并且进行一次筛选：此对象是否必要执行finalize()方法；</p><p>（A）、没有必要执行</p><p> 没有必要执行的情况：（1）、对象没有覆盖finalize()方法；（2）、finalize()方法已经被JVM调用过；这两种情况就可以认为对象已死，可以回收；</p><p>（B）、有必要执行</p><p> 对有必要执行finalize()方法的对象，被放入F-Queue队列中；稍后在JVM自动建立、低优先级的Finalizer线程（可能多个线程）中触发这个方法；</p><p>2、第二次标记</p><p> GC将对F-Queue队列中的对象进行第二次小规模标记；finalize()方法是对象逃脱死亡的最后一次机会： （A）、如果对象在其finalize()方法中重新与引用链上任何一个对象建立关联，第二次标记时会将其移出”即将回收”的集合；（B）、如果对象没有，也可以认为对象已死，可以回收了；<br>        一个对象的finalize()方法只会被系统自动调用一次，经过finalize()方法逃脱死亡的对象，第二次不会再调用；</p><h3 id="3-2-finalize-方法"><a href="#3-2-finalize-方法" class="headerlink" title="3.2  finalize()方法"></a>3.2  finalize()方法</h3><p> finalize()是Object类的一个方法，是Java刚诞生时为了使C/C++程序员容易接受它所做出的一个妥协，但不要当作类似C/C++的析构函数；因为它执行的时间不确定，甚至是否被执行也不确定（Java程序的不正常退出），而且运行代价高昂，无法保证各个对象的调用顺序（甚至有不同线程中调用）；如果需要”释放资源”，可以定义显式的终止方法，并在”try-catch-finally”的finally{}块中保证及时调用，如File相关类的close()方法； 此外，finalize()方法主要有两种用途：</p><p>1、充当”安全网”</p><p> 当显式的终止方法没有调用时，在finalize()方法中发现后发出警告； 但要考虑是否值得付出这样的代价； 如FileInputStream、FileOutputStream、Timer和Connection类中都有这种应用；</p><p>2、与对象的本地对等体有关</p><p> 本地对等体：普通对象调用本地方法（JNI）委托的本地对象；<br>​ 本地对等体不会被GC回收；​<br>​ 如果本地对等体不拥有关键资源，finalize()方法里可以回收它（如C/C++中malloc()，需要调用free()）；​<br>​ 如果有关键资源，必须显式的终止方法；​<br>​ 一般情况下，应尽量避免使用它，甚至可以忘掉它。</p><h2 id="4-HotSpot虚拟机中对象可达性分析的实现"><a href="#4-HotSpot虚拟机中对象可达性分析的实现" class="headerlink" title="4.HotSpot虚拟机中对象可达性分析的实现"></a>4.HotSpot虚拟机中对象可达性分析的实现</h2><h3 id="4-1-枚举根节点"><a href="#4-1-枚举根节点" class="headerlink" title="4.1 枚举根节点"></a>4.1 枚举根节点</h3><p> 枚举根节点也就是查找GC Roots；</p><p> 目前主流JVM都是准确式GC，可以直接得知哪些地方存放着对象引用，所以执行系统停顿下来后，并不需要全部、逐个检查完全局性的和执行上下文中的引用位置；</p><p> 在HotSpot中，是使用一组称为OopMap的数据结构来达到这个目的的；在类加载时，计算对象内什么偏移量上是什么类型的数据；在JIT编译时，也会记录栈和寄存器中的哪些位置是引用；这样GC扫描时就可以直接得知这些信息；</p><h3 id="4-2-安全点"><a href="#4-2-安全点" class="headerlink" title="4.2 安全点"></a>4.2 安全点</h3><h4 id="4-2-1-安全点是什么，为什么需要安全点"><a href="#4-2-1-安全点是什么，为什么需要安全点" class="headerlink" title="4.2.1 安全点是什么，为什么需要安全点"></a>4.2.1 安全点是什么，为什么需要安全点</h4><p> HotSpot在OopMap的帮助下可以快速且准确的完成GC Roots枚举，但是这有一个问题：<br>运行中，非常多的指令都会导致引用关系变化；如果为这些指令都生成对应的OopMap，需要的空间成本太高；<strong>问题解决：</strong></p><p> 只在特定的位置记录OopMap引用关系，这些位置称为安全点（Safepoint）；即程序执行时并非所有地方都能停顿下来开始GC；</p><h4 id="4-2-2-安全点的选定"><a href="#4-2-2-安全点的选定" class="headerlink" title="4.2.2 安全点的选定"></a>4.2.2 安全点的选定</h4><p> 不能太少，否则GC等待时间太长；也不能太多，否则GC过于频繁，增大运行时负荷；所以，基本上是以程序”是否具有让程序长时间执行的特征”为标准选定；”长时间执行”最明显的特征就是指令序列复用，如：方法调用、循环跳转、循环的末尾、异常跳转等； 只有具有这些功能的指令才会产生Safepoint；</p><h4 id="4-2-3-如何在安全点上停顿"><a href="#4-2-3-如何在安全点上停顿" class="headerlink" title="4.2.3 如何在安全点上停顿"></a>4.2.3 如何在安全点上停顿</h4><p> 对于Safepoint，如何在GC发生时让所有线程（不包括JNI线程）运行到其所在最近的Safepoint上再停顿下来？ 主要有两种方案可选：</p><p>（A）、抢先式中断（Preemptive Suspension）</p><p> 不需要线程主动配合，实现如下： （1）、在GC发生时，首先中断所有线程； （2）、如果发现不在Safepoint上的线程，就恢复让其运行到Safepoint上； 现在几乎没有JVM实现采用这种方式；</p><p>（B）、主动式中断（Voluntary Suspension）</p><p> （1）、在GC发生时，不直接操作线程中断，而是仅简单设置一个标志； （2）、让各线程执行时主动去轮询这个标志，发现中断标志为真时就自己中断挂起<br>​ 而轮询标志的地方和Safepoint是重合的；​ 在JIT执行方式下：test指令是HotSpot生成的轮询指令；​ 一条test汇编指令便完成Safepoint轮询和触发线程中断；</p><h3 id="4-3-安全区域"><a href="#4-3-安全区域" class="headerlink" title="4.3 安全区域"></a>4.3 安全区域</h3><h4 id="4-3-1-为什么需要安全区域"><a href="#4-3-1-为什么需要安全区域" class="headerlink" title="4.3.1 为什么需要安全区域"></a>4.3.1 为什么需要安全区域</h4><p> 对于上面的Safepoint还有一个问题： 程序不执行时没有CPU时间（Sleep或Blocked状态），无法运行到Safepoint上再中断挂起；<br>​ 这就需要安全区域来解决；</p><h4 id="4-3-2-什么是安全区域（Safe-Region）"><a href="#4-3-2-什么是安全区域（Safe-Region）" class="headerlink" title="4.3.2 什么是安全区域（Safe Region）"></a>4.3.2 什么是安全区域（Safe Region）</h4><p> 指一段代码片段中，引用关系不会发生变化； 在这个区域中的任意地方开始GC都是安全的；</p><h4 id="4-3-3-如何用安全区域解决问题"><a href="#4-3-3-如何用安全区域解决问题" class="headerlink" title="4.3.3 如何用安全区域解决问题"></a>4.3.3 如何用安全区域解决问题</h4><p> 安全区域解决问题的思路：</p><p> （1）、线程执行进入Safe Region，首先标识自己已经进入Safe Region；</p><p> （2）、线程被唤醒离开Safe Region时，其需要检查系统是否已经完成根节点枚举（或整个GC）；如果已经完成，就继续执行；否则必须等待，直到收到可以安全离开Safe Region的信号通知；</p><p>这样就不会影响标记结果；</p><h2 id="5-垃圾回收算法"><a href="#5-垃圾回收算法" class="headerlink" title="5.垃圾回收算法"></a>5.垃圾回收算法</h2><h3 id="5-1-标记清除"><a href="#5-1-标记清除" class="headerlink" title="5.1 标记清除"></a><strong>5.1 标记清除</strong></h3><p>标记-清除算法将垃圾回收分为两个阶段：<strong>标记阶段和清除阶段</strong>。</p><p><strong>标记</strong>: Collector 从引用根节点开始遍历，<strong>标记所有被引用的对象。一般是在对象的Header中记录为可达对象。</strong><br>       <strong>清除</strong>: Collector对堆内存从头到尾进行线性的遍历，如果发现某个对象在其Header中没有标记为可达对象，则将其回收。这里所谓的清除并不是真的置空，而是把需要清除的对象地址保存在空闲的地址列表里。下次有新对象需要加载时，判断垃圾的位置空间是否够，如果够，就存放。</p><p><img src="https://s2.loli.net/2022/05/09/B7sMtOYvWmpJnX2.png"><br><strong>适用场合</strong>：</p><ul><li>存活对象较多的情况下比较高效</li><li>适用于年老代（即旧生代）</li></ul><p><strong>缺点</strong>：</p><ul><li>容易产生内存碎片，再来一个比较大的对象时（典型情况：该对象的大小大于空闲表中的每一块儿大小但是小于其中两块儿的和），会提前触发垃圾回收而且需要维护一个空闲列表</li><li>效率不算高（第一次：标记存活对象；第二次：清除没有标记的对象）</li><li>在进行GC的时候，需要停止整个应用程序，导致用户体验差</li></ul><h3 id="5-2-复制算法"><a href="#5-2-复制算法" class="headerlink" title="5.2 复制算法"></a><strong>5.2 复制算法</strong></h3><p>将活着的内存空间分为两块，每次只使用其中一块，在垃圾回收时将正在使用的内存中的存活对象复制到未被使用的内存块中，之后清除正在使用的内存块中的所有对象，交换两个内存的角色，最后完成垃圾收。</p><p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-fuzhi.png"></p><p>​        在新生代，对常规应用的垃圾回收，一 次通常可以回收70%-99%的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。</p><p><strong>适用场合：</strong></p><ul><li>存活对象较少的情况下比较高效</li><li>扫描了整个空间一次（标记存活对象并复制移动）</li><li>适<strong>用于年轻代（即新生代）</strong>：基本上98%的对象是”朝生夕死”的，存活下来的会很少</li></ul><p><strong>优点：</strong></p><ul><li>没有标记和清除过程，实现简单，运行高效</li><li>复制过去以后保证空间的连续性，不会出现“碎片”问题。</li></ul><p><strong>缺点：</strong></p><ul><li>需要两倍的内存空间</li><li>对于G1这种分拆成为大量region的GC，复制而不是移动，意味着GC需要维护region之间对象引用关系，不管是内存占用或者时间开销也不小</li></ul><h3 id="5-3-标记整理"><a href="#5-3-标记整理" class="headerlink" title="5.3  标记整理"></a><strong>5.3  标记整理</strong></h3><p>复制算法的高效性是建立在存活对象少、垃圾对象多的前提下的。</p><p>这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。</p><p>执行过程：</p><p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-markcompact.png"></p><p><img src="https://s2.loli.net/2022/05/10/lVeXL13CiT6cmp2.png"></p><blockquote><p>标记-压缩算法的最终效果等同于标记-清除算法执行完成后，再进行一次内存碎片整理，因此，也可以把它称为标记-清除-压缩(Mark- Sweep-Compact)算法。<br>        二者的本质差异在于标记-清除算法是一种非移动式的回收算法，标记-压缩是移动式的。是否移动回收后的存活对象是一-项优缺点并存的风险决策。<br>        可以看到，标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存会被清理掉。如此一-来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可，这比维护一个空闲列表显然少了许多开销。</p></blockquote><ul><li>优点:<br>消除了标记-清除算法当中，内存区域分散的缺点，我们需要给新对象分配内存时，JVM只 需要持有一个内存的起始地址即可。消除了复制算法当中，内存减半的高额代价。</li><li>缺点:<br>从效率上来说，标记-整理算法要低于复制算法。移动对象的同时，如果对象被其他对象引用，则还需要调整引用的地址。移动过程中，需要全程暂停用户应用程序。即: STW</li></ul><p><strong>对比三种算法</strong></p><p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfaduibi.png"></p><h3 id="5-4-分代收集算法"><a href="#5-4-分代收集算法" class="headerlink" title="5.4 分代收集算法"></a><strong>5.4 分代收集算法</strong></h3><p>把堆内存分为新生代和老年代，新生代又分为 Eden 区、From Survivor 和 To Survivor。一般新生代中的对象基本上都是朝生夕灭的，每次只有少量对象存活，因此采用复制算法，只需要复制那些少量存活的对象就可以完成垃圾收集；老年代中的对象存活率较高，就采用标记-清除和标记-整理算法来进行回收。</p><p><img src="https://s2.loli.net/2022/05/10/mifcXrvFRsPB5uS.png"></p><p><strong>在这些区域的垃圾回收大概有如下几种情况：</strong></p><blockquote><p>大多数情况下，新的对象都分配在Eden区，当 Eden 区没有空间进行分配时，将进行一次 Minor GC，清理 Eden 区中的无用对象。清理后，Eden 和 From Survivor 中的存活对象如果小于To Survivor 的可用空间则进入To Survivor，否则直接进入老年代）；Eden 和 From Survivor 中还存活且能够进入 To Survivor 的对象年龄增加 1 岁（虚拟机为每个对象定义了一个年龄计数器，每执行一次 Minor GC 年龄加 1），当存活对象的年龄到达一定程度（默认 15 岁）后进入老年代，可以通过 -XX:MaxTenuringThreshold 来设置年龄的值。</p><p>当进行了 Minor GC 后，Eden 还不足以为新对象分配空间（那这个新对象肯定很大），新对象直接进入老年代。</p><p>占 To Survivor 空间一半以上且年龄相等的对象，大于等于该年龄的对象直接进入老年代，比如 Survivor 空间是 10M，有几个年龄为 4 的对象占用总空间已经超过 5M，则年龄大于等于 4 的对象都直接进入老年代，不需要等到 MaxTenuringThreshold 指定的岁数。</p><p>在进行 Minor GC 之前，会判断老年代最大连续可用空间是否大于新生代所有对象总空间，如果大于，说明 Minor GC 是安全的，否则会判断是否允许担保失败，如果允许，判断老年代最大连续可用空间是否大于历次晋升到老年代的对象的平均大小，如果大于，则执行 Minor GC，否则执行 Full GC。</p><p>当在 java 代码里直接调用 System.gc() 时，会建议 <a href="https://so.csdn.net/so/search?q=JVM&amp;spm=1001.2101.3001.7020">JVM</a> 进行 Full GC，但一般情况下都会触发 Full GC，一般不建议使用，尽量让虚拟机自己管理 GC 的策略。</p><p>永久代（方法区）中用于存放类信息，jdk1.6 及之前的版本永久代中还存储常量、静态变量等，当永久代的空间不足时，也会触发 Full GC，如果经过 Full GC 还无法满足永久代存放新数据的需求，就会抛出永久代的内存溢出异常。</p><p>大对象（需要大量连续内存的对象）例如很长的数组，会直接进入老年代，如果老年代没有足够的连续大空间来存放，则会进行 Full GC。</p></blockquote><h2 id="6-参考"><a href="#6-参考" class="headerlink" title="6.参考"></a>6.参考</h2><p>1.JVM：引用计数算法和可达性分析算法(<a href="https://www.zhifou.net/blogdetail/183">https://www.zhifou.net/blogdetail/183</a>)</p><p>2.4种JVM垃圾回收算法详解（<a href="https://mikechen.cc/7102.html%EF%BC%89">https://mikechen.cc/7102.html）</a></p><p>3.深入理解Java虚拟机（四）之垃圾回收算法(<a href="https://www.codenong.com/cs106639755/">https://www.codenong.com/cs106639755/</a>)</p>]]></content>
+      
+      
       <categories>
-        <category>博客</category>
+          
+          <category> JVM </category>
+          
       </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>windows快捷操作</title>
-    <url>/archives/d0277806.html</url>
-    <content><![CDATA[<p>1.打开服务面板 ： services.msc</p>
-<p>2.打开运行面板：windos + R</p>
-<p>3.打开任务管理器： ctrl+shfit+esc/taskmgr</p>
-<p>4.所有窗口最小化：Win+D</p>
-<p>5.打开“开始”菜单： ESC+ctrl</p>
-<p>6.快速切换到某个窗口：alt+tab</p>
-<p>7.快速关闭浏览器窗口：ctrl+W</p>
-<p>8.在浏览器的所有窗口快速来回切换：ctrl+tab</p>
-<p>9.打开资源管理器：win+E</p>
-<p>10.清屏：cls</p>
-<p>11.cmd: win+R然后输入cmd</p>
-<p>12.注册表：regedit</p>
-<p>13.计算器：clac</p>
-<p>14.远程桌面连接：mstsc</p>
-<p>15.ODBC数据源管理器：odbcad32</p>
-<p>16.计算机管理：compmgmt.msc</p>
-<p>17.系统配置：msconfig</p>
-<p>18.磁盘管理：diskmgmt.msc</p>
-<p>19.控制面板:control</p>
-<p>20.测试网络是否通：ping</p>
-<p>21.测试是否开放某个端口：telnet [域名或者IP] [端口]</p>
-<p>22.测试网络路由：<strong>tracert</strong> </p>
-<p>23.查看与配置网络：<strong>ipconfig</strong></p>
-<p>24.查看本机DNS服务器/域名ip地址解析：<strong>nslookup</strong></p>
-<p>25.打开记事本：notepad</p>
-<p>26.组策略：gpedit.msc</p>
-<p>27.60秒倒计时关机命令：shutdown</p>
-<p>28.打开资源管理器：explorer</p>
-<p>29.证书管理：certmgr.msc</p>
-<p>30.启动字符映射表:charmap</p>
-<p>31.磁盘碎片整理：dfrg.msc</p>
-<p>32.屏幕分辨率：desk.cpl</p>
-<p>33.Windows防火墙：firewall.cpl</p>
-<p>34.共享文件夹管理器:fsmgmt.msc</p>
-<p>35.设备管理器:hdwwiz.cpl/devmgmt.msc</p>
-<p>36.注销命令：logoff</p>
-<p>37.声音：mmsys.cpl</p>
-<p>38.放大镜实用程序：magnify</p>
-<p>39.显示内存使用情况：mem.exe</p>
-<p>40.打开控制台：mmc</p>
-<p>41.程序和功能：appwiz.cpl</p>
-<p>42.系统信息：msinfo32</p>
-<p>43.画图：mspaint</p>
-<p>44.网络连接：ncpa.cpl</p>
-<p>45.打开记事本：notepad：</p>
-<p>46.计算机性能监测器：perfmon</p>
-<p>47.电源选项：powercfg.cpl</p>
-<p>48.系统还原：rstrui</p>
-<p>49.本地安全策略：secpol.msc</p>
-<p>50.Windows激活，查看系统激活信息：slui</p>
-<p>51.截图工具，支持无规则截图：snippingtool</p>
-<p>52.系统属性：sysdm.cpl</p>
-<p>53.日期和时间：timedate.cpl</p>
-<p>54.写字板：write</p>
-<p>55.垃圾整理：cleanmgr</p>
-<p>56.无线连接：Irprops.cpl</p>
-<p>57.关于Windows：winver</p>
-<p>58.检查DirectX信息:dxdiag</p>
-<p>59.系统组件服务:dcomcnfg</p>
-<p>60.事件查看器:eventvwr</p>
-<p>61.打开屏幕键盘:osk</p>
-<p>62.音量控制程序:sndvol</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 垃圾回收算法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>垃圾收集器介绍</title>
+      <link href="/archives/e321971f.html"/>
+      <url>/archives/e321971f.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-查看使用的何种垃圾收集器"><a href="#1-查看使用的何种垃圾收集器" class="headerlink" title="1.查看使用的何种垃圾收集器"></a>1.查看使用的何种垃圾收集器</h2><p><strong>方法一</strong></p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk11\bin&gt;java <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintCommandLineFlags <span class="token operator">-</span>version<span class="token operator">-</span>XX:G1ConcRefinementThreads=13 <span class="token operator">-</span>XX:GCDrainStackTargetSize=64 <span class="token operator">-</span>XX:InitialHeapSize=257905728 <span class="token operator">-</span>XX:MaxHeapSize=4126491648 <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintCommandLineFlags <span class="token operator">-</span>XX:ReservedCodeCacheSize=251658240 <span class="token operator">-</span>XX:<span class="token operator">+</span>SegmentedCodeCache <span class="token operator">-</span>XX:<span class="token operator">+</span>UseCompressedClassPointers <span class="token operator">-</span>XX:<span class="token operator">+</span>UseCompressedOops <span class="token operator">-</span>XX:<span class="token operator">+</span>UseG1GC <span class="token operator">-</span>XX:<span class="token operator">-</span>UseLargePagesIndividualAllocationjava version <span class="token string">"11"</span> 2018-09-25Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">)</span>Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">,</span> mixed mode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>方法二</strong></p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk11\bin&gt;java <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintFlagsFinal <span class="token operator">-</span>version<span class="token namespace">[Global flags]</span> bool UseG1GC             = true                     <span class="token punctuation">{</span>product<span class="token punctuation">}</span> <span class="token punctuation">{</span>ergonomic<span class="token punctuation">}</span>java version <span class="token string">"11"</span> 2018-09-25Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">)</span>Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">,</span> mixed mode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>方法三</strong></p><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>management<span class="token punctuation">.</span></span><span class="token class-name">GarbageCollectorMXBean</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>management<span class="token punctuation">.</span></span><span class="token class-name">ManagementFactory</span><span class="token punctuation">;</span><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span><span class="token keyword">public</span> <span class="token keyword">class</span> x <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GarbageCollectorMXBean</span><span class="token punctuation">&gt;</span></span> l <span class="token operator">=</span> <span class="token class-name">ManagementFactory</span><span class="token punctuation">.</span><span class="token function">getGarbageCollectorMXBeans</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">GarbageCollectorMXBean</span> b <span class="token operator">:</span> l<span class="token punctuation">)</span> <span class="token punctuation">{</span>            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token punctuation">}</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong>方法四</strong>:Java进程正在运行的情况下</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk1<span class="token punctuation">.</span>8<span class="token punctuation">.</span>0_162\bin&gt;jps11408 TestJmap33076 Eclipse27324 JpsD:\app\Java\jdk1<span class="token punctuation">.</span>8<span class="token punctuation">.</span>0_162\bin&gt;jmap <span class="token operator">-</span>heap 11408Attaching to <span class="token keyword">process</span> ID 11408<span class="token punctuation">,</span> please wait<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>Debugger attached successfully<span class="token punctuation">.</span>Server compiler detected<span class="token punctuation">.</span>JVM version is 25<span class="token punctuation">.</span>162-b12<span class="token keyword">using</span> thread-local object allocation<span class="token punctuation">.</span><span class="token keyword">Parallel</span> <span class="token function">GC</span> with 13 thread<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="2-XX：UseParallelGC解释"><a href="#2-XX：UseParallelGC解释" class="headerlink" title="2.-XX：UseParallelGC解释"></a>2.<a href="http://codewenda.com/xx%EF%BC%9Auseparallelgc%E5%92%8C-xx%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A-useparnewgc/">-XX：UseParallelGC</a>解释</h2><p>引用《深入理解Java虚拟机：JVM高级特性与最佳实践》的介绍:</p><p><img src="https://s2.loli.net/2022/05/06/ePFS3tdLTVUcXZz.png" alt="lajishoujixiangguancanshu"></p><p>表示使用的垃圾收集器是：新生代（Parallel Scavenge），老年代（Ps MarkSweep）组合。</p><p>jdk1.7 默认垃圾收集器Parallel Scavenge（新生代）+Parallel Old（老年代）</p><p>jdk1.8 默认垃圾收集器Parallel Scavenge（新生代）+Parallel Old（老年代）</p><p>jdk1.9 默认垃圾收集器G1</p><h2 id="3-JVM中的垃圾收集器"><a href="#3-JVM中的垃圾收集器" class="headerlink" title="3.JVM中的垃圾收集器"></a>3.JVM中的垃圾收集器</h2><p><img src="https://s2.loli.net/2022/05/06/1B2LAM7RPUJbW5i.png" alt="gcollector"><br>图中展示了7种作用于不同分代的收集器，如果两个收集器之间存在连线，则说明它们可以搭配使用。虚拟机所处的区域则表示它是属于新生代还是老年代收集器。<br>新生代收集器（全部的都是复制算法）：Serial、ParNew、Parallel Scavenge<br>老年代收集器：CMS（标记-清理）、Serial Old（标记-整理）、Parallel Old（标记整理）<br>整堆收集器： G1（一个Region中是标记-清除算法，2个Region之间是复制算法）<br><strong>垃圾收集器中“并发”和“并行”的概念</strong>：<br>1，<strong>并行（Parallel）</strong>：<strong>同一时间有多条这样的线程在协同工作</strong>，通常默认此时用户线程是处于等待状态。<br>2，<strong>并发（Concurrent）</strong>：<strong>同一时间垃圾收集器线程与用户线程都在运行</strong>。</p><p><strong>吞吐量（Throughput）概念</strong></p><p><strong>吞吐量</strong>：CPU用于运行用户代码的时间与CPU总消耗时间的比值，即<strong>吞吐量 = 运行用户代码时间 /（运行用户代码时间 + 垃圾收集时间）</strong>。</p><h3 id="1-Serial收集器"><a href="#1-Serial收集器" class="headerlink" title="1.Serial收集器"></a>1.Serial收集器</h3><p>Serial收集器是最基本的、发展历史最悠久的收集器。</p><p><strong>特点：</strong></p><ul><li>客户端模式下的默认新生代收集器</li><li>单线程工作（它的“单线程”的意义并不仅仅是说明它<strong>只会使用一个处理器或一条收集线程</strong>去完成垃圾收集工作，更重要的是强调在它进行垃圾收集时，<strong>必须暂停其他所有工作线程</strong>，直到它收集结束）</li><li>简单而高效（与其他收集器的单线程相比）</li><li>对于内存资源受限的环境， 它是所有收集器里额外内存消耗（Memory Footprint）最小的</li><li>对于单核处理器或处理器核心数较少的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得最高的单线程收集效率</li></ul><p><strong>应用场景</strong>：适用于Client模式下的虚拟机。<br><strong>Serial / Serial Old收集器运行示意图</strong><br><img src="https://s2.loli.net/2022/05/06/9WZCBSvKyzsQO2X.png"></p><h3 id="2-ParNew收集器"><a href="#2-ParNew收集器" class="headerlink" title="2.ParNew收集器"></a>2.ParNew收集器</h3><p>Serial收集器的<strong>多线程并行版本</strong>除了使用多线程外其余行为均和Serial收集器一模一样（参数控制、收集算法、Stop The World、对象分配规则、回收策略等）。<br>    <strong>特点：</strong></p><ul><li>JDK 7之前在<strong>服务端模式下首选的新生代收集器</strong>（一个重要原因：除了Serial收集器外， 目前只有它能与 CMS 收集器配合工作）</li><li>ParNew收集器是激活CMS后（使用<code>-XX: +UseConcMarkSweepGC</code>选项） 的默认新生代收集器，也可以使用<code>-XX: +/-UseParNewGC</code>选项来强制指定或者禁用它。</li><li>ParNew收集器在<strong>单核心处理器</strong>的环境中绝对不会有比Serial收集器更好的效果</li><li>默认开启的收集线程数与处理器核心数量相同（可以使用<code>-XX: ParallelGCThreads</code>参数来限制垃圾收集的线程数）</li></ul><p><em>ParNew/Serial Old组合收集器运行示意图如下：</em><br><img src="https://s2.loli.net/2022/05/06/6S18coj7gV3Pqhs.png"></p><h3 id="3-Parallel-Scavenge-收集器"><a href="#3-Parallel-Scavenge-收集器" class="headerlink" title="3.Parallel Scavenge 收集器"></a>3.Parallel Scavenge 收集器</h3><p>Parallel Scavenge 收集器与吞吐量关系密切，故也称为吞吐量优先收集器。</p><p><strong>特点：</strong></p><ul><li>新生代收集器</li><li>基于标记-复制算法实现</li><li>多线程收集器</li><li>吞吐量优先收集器（Parallel Scavenge收集器其他收集器不同在于：CMS等收集器的关注点是尽可能地<strong>缩短垃圾收集时用户线程的停顿时间</strong>， 而Parallel Scavenge收集器的目标则是<strong>达到一个可控制的吞吐量</strong>）</li><li>自适应调节策略（通过<code>+UseAdaptiveSizePolicy</code>参数激活）</li></ul><p><strong>GC自适应调节策略</strong>：Parallel Scavenge收集器可设置-XX:+UseAdptiveSizePolicy参数。当开关打开时不需要手动指定新生代的大小（-Xmn）、Eden与Survivor区的比例（-XX:SurvivorRation）、晋升老年代的对象年龄（-XX:PretenureSizeThreshold）等，虚拟机会根据系统的运行状况收集性能监控信息，动态设置这些参数以提供最优的停顿时间和最高的吞吐量，这种调节方式称为GC的自适应调节策略。<br>Parallel Scavenge收集器使用两个参数控制吞吐量：</p><ul><li><code>-XX： MaxGCPauseMillis</code>参数：允许的值是一个大于0的毫秒数， 收集器将尽力保证内存回收花费的时间不超过用户设定值。</li><li><code>-XX： GCTimeRatio</code>参数：一个大于0小于100的整数， 也就是垃圾收集时间占总时间的比率， 相当于吞吐量的倒数。 </li><li><code>+UseAdaptiveSizePolicy</code>参数：这是一个开关参数， 当这个参数被激活之后， 就不需要人工指定新生代的大小（-Xmn） 、 Eden与Survivor区的比例（-XX： SurvivorRatio） 、 晋升老年代对象大小（-XX：PretenureSizeThreshold） 等细节参数了， 虚拟机会根据当前系统的运行情况收集性能监控信息，<strong>动态调整</strong>这些参数以提供最合适的停顿时间或者最大的吞吐量。只需要把基本的内存数据设置好（如-Xmx设置最大堆），然后使用<code>-XX： MaxGCPauseMillis</code>参数（更关注最大停顿时间）或<code>-XX： GCTimeRatio</code>（更关注吞吐量） 参数给虚拟机设立一个优化目标， 那具体细节参数的调节工作就由虚拟机完成了。</li></ul><h3 id="4-Serial-Old"><a href="#4-Serial-Old" class="headerlink" title="4.Serial Old"></a>4.Serial Old</h3><p>Serial Old是Serial收集器的老年代版本</p><p><strong>特点：</strong></p><ul><li>单线程收集器</li><li>使用标记-整理算法</li><li>主要在<strong>客户端模式</strong>下使用。如果在<strong>服务端模式</strong>下，它也可能有两种用途： 一种是在JDK 1.5以及之前的版本中与Parallel Scavenge收集器搭配使用，另外一种就是作为CMS收集器发生失败时的后备预案，<strong>在并发收集发生Concurrent Mode Failure时使用</strong>。</li></ul><p>Serial / Serial Old收集器工作过程图（Serial收集器图示相同）：<br><img src="https://s2.loli.net/2022/05/06/9WZCBSvKyzsQO2X.png"></p><h3 id="5-Parallel-Old"><a href="#5-Parallel-Old" class="headerlink" title="5.Parallel Old"></a>5.Parallel Old</h3><p>Parallel Old是Parallel Scavenge收集器的老年代版本。<strong>JDK 1.6中发布</strong>。</p><p><strong>特点：</strong></p><ul><li>多线程并发收集</li><li>使用标记-整理算法</li></ul><p>​    <strong>应用场景</strong>：注重高吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge+Parallel Old 收集器。<br>Parallel Scavenge/Parallel Old收集器工作过程图：</p><p><img src="https://s2.loli.net/2022/05/06/axL4crnMeGCAqO2.png" alt="parnew"></p><h3 id="6-CMS收集器"><a href="#6-CMS收集器" class="headerlink" title="6.CMS收集器"></a>6.CMS收集器</h3><p>CMS收集器是一种以获取最短回收停顿时间为目标的收集器。<strong>JDK1.5中发布</strong>。<br>     <strong>特点：</strong></p><ul><li>老年代的收集器</li><li>使用标记-清除算法</li><li>第一款真正意义上支持并发的垃圾收集器，首次实现了让垃圾收集线程与用户线程（基本上）同时工作（并发收集）</li><li>以获取<strong>最短回收停顿时间</strong>为目标的收集器（低停顿）</li></ul><p>​      <strong>应用场景：</strong>：适用于注重服务的响应速度，希望系统停顿时间最短，给用户带来更好的体验等场景下。如web程序、b/s服务。</p><p><strong>收集流程：</strong></p><p>CMS整个过程的四个步骤如下，其中初始标记、 重新标记这两个步骤仍然需要“Stop The World”。</p><ol><li><strong>初始标记</strong>-仅仅只是标记一下GC Roots能直接关联到的对象，速度很快</li><li><strong>并发标记</strong>-从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行</li><li><strong>重新标记</strong>-为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些， 但也远比并发标记阶段的时间短</li><li><strong>并发清除</strong>-清理删除掉标记阶段判断的已经死亡的对象， 由于不需要移动存活对象， 所以这个阶段也是可以与用户线程同时并发的</li></ol><p> CMS收集器的工作过程图：<br><img src="https://s2.loli.net/2022/05/06/FeAwaDb5JL3ZNgV.png"></p><p><strong>缺点：</strong></p><ul><li>CMS 收集器<strong>对处理器资源非常敏感</strong>。事实上，面向并发设计的程序都对处理器资源比较敏感。在并发阶段，它虽然不会导致用户线程停顿，但却会因为占用了一部分线程而导致应用程序变慢，降低总吞吐量。</li><li>由于CMS收集器<strong>无法处理“浮动垃圾”</strong>， 有可能出现“Con-current Mode Failure”失败进而导致另一次完全“Stop The World”的Full GC的产生。</li><li>CMS是一款基于“标记-清除”算法实现的收集器，这意味着收集结束时<strong>会有大量空间碎片产生</strong>，空间碎片过多时，将会给大对象分配带来很大麻烦，往往会出现老年代还有很多剩余空间， 但就是无法找到足够大的连续空间来分配当前对象， 而不得不提前触发一次Full GC的情况。</li></ul><blockquote><p><strong>关于CMS收集器浮动垃圾的说明：</strong><br>由于在CMS的并发标记和并发清理阶段，用户线程是还在继续运行的，程序在运行自然就还会伴随有新的垃圾对象不断产生，但这一部分垃圾对象是出现在标记过程结束以后，CMS无法在当次收集中处理掉它们， 只好留待下一次垃圾收集时再清理掉。这一部分垃圾就称为“浮动垃圾”。<br>由于在垃圾收集阶段用户线程还需要持续运行， 那就还需要预留足够内存空间提供给用户线程使用， 因此CMS收集器不能像其他收集器那样等待到老年代几乎完全被填满了再进行收集，<strong>必须预留一部分空间供并发收集时的程序运作使用</strong>。</p></blockquote><h3 id="7-G1-收集器（Garbage-First）"><a href="#7-G1-收集器（Garbage-First）" class="headerlink" title="7.G1 收集器（Garbage First）"></a>7.<strong>G1 收集器（Garbage First）</strong></h3><p><strong>特点：</strong></p><ul><li>将堆内存“化整为零”，开创了收集器面向局部收集的设计思路和基于Region的内存布局形式</li><li>面向全堆的收集器，不再需要其他新生代收集器的配合工作</li><li>主要面向服务端应用的垃圾收集器</li><li>G1 仍是遵循分代收集理论设计的， 但其堆内存的布局与其他收集器有非常明显的差异</li><li>G1 不再坚持固定大小以及固定数量的分代区域划分，而是把连续的Java堆划分为多个大小相等的独立Region，每一个Region都可以根据需要，扮演新生代的Eden空间、Survivor空间或者老年代空间</li><li>收集器能够对扮演不同角色的Region采用不同的策略去处理， 这样无论是新创建的对象还是已经存活了一段时间、熬过多次收集的旧对象都能获取很好的收集效果</li><li>Region中还有一类特殊的Humongous区域， 专门用来存储大对象。 <strong>G1认为只要大小超过了一个Region容量一半的对象即可判定为大对象。</strong> 每个Region的大小可以通过参数<code>-XX： G1HeapRegionSize</code>设定， 取值范围为1MB～32MB， 且应为2的N次幂。 而对于那些超过了整个Region容量的超级大对象，将会被存放在N个连续的Humongous Region之中， G1的大多数行为都把Humongous Region作为老年代的一部分来进行看待</li><li>G1收集器之所以能建立可预测的停顿时间模型， 是因为它将Region作为单次回收的最小单元， 即每次收集到的内存空间都是Region大小的整数倍， 这样可以有计划地避免在整个Java堆中进行全区域的垃圾收集</li><li>G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小， 价值即回收所获得的空间大小以及回收所需时间的经验值， 然后在后台维护一个优先级列表， 每次根据用户设定允许的收集停顿时间（使用参数<code>-XX： MaxGCPauseMillis</code>指定， 默认值是200毫秒），优先处理回收价值收益最大的那些Region</li><li>可以由用户指定期望的停顿时间是G1收集器很强大的一个功能，设置不同的期望停顿时间， 可使得G1在不同应用场景中取得关注吞吐量和关注延迟之间的最佳平衡（默认的停顿目标为两百毫秒，通常把期望停顿时间设置为一两百毫秒或者两三百毫秒会是比较合理的）</li></ul><p>G1 收集器 Region 分区示意图如下：</p><p><img src="https://s2.loli.net/2022/05/06/5xLagzlejM63Zph.jpg" alt="img"></p><p>G1 收集器的运作过程主要步骤如下：</p><ul><li><strong>初始标记</strong>：<strong>仅仅只是标记一下GC Roots能直接关联到的对象</strong>，并且修改TAMS指针的值，让下一阶段用户线程并发运行时，能正确地在可用的Region中分配新对象。这个阶段需要停顿线程，但耗时很短，而且是借用进行Minor GC的时候同步完成的，所以G1收集器在这个阶段实际并没有额外的停顿。</li><li><strong>并发标记</strong>：<strong>从GC Root开始对堆中对象进行可达性分析，递归扫描整个堆里的对象图，找出要回收的对象</strong>，这阶段耗时较长，但可与用户程序并发执行。<strong>当对象图扫描完成以后，还要重新处理SATB记录下的在并发时有引用变动的对象。</strong></li><li><strong>最终标记</strong>：对用户线程做另一个短暂的暂停，用于<strong>处理并发阶段结束后仍遗留下来的最后那少量的SATB记录。</strong></li><li><strong>筛选回收</strong>： 负责更新Region的统计数据，对各个Region的回收价值和成本进行排序， 根据用户所期望的停顿时间来制定回收计划， 可以自由选择任意多个Region构成回收集，然后<strong>把决定回收的那一部分Region的存活对象复制到空的Region中，再清理掉整个旧Region的全部空间</strong>。这里的操作涉及存活对象的移动，是必须暂停用户线程，由多条收集器线程并行完成的。</li></ul><p>从上述阶段的描述可以看出， G1收集器除了并发标记外， 其余阶段也是要完全暂停用户线程的，换言之， 它并非纯粹地追求低延迟， <strong>官方给它设定的目标是在延迟可控的情况下获得尽可能高的吞吐量。</strong></p><p>G1 收集器运行示意图如下：</p><p><img src="https://s2.loli.net/2022/05/06/9TBaQpjKJLEYzOH.jpg" alt="img"></p><h2 id="4-G1-收集器与-CMS-收集器的异同"><a href="#4-G1-收集器与-CMS-收集器的异同" class="headerlink" title="4.G1 收集器与 CMS 收集器的异同"></a>4.<strong>G1 收集器与 CMS 收集器的异同</strong></h2><ul><li>两者都非常关注停顿时间的控制</li><li>G1 可以指定最大停顿时间、 分Region的内存布局、 按收益动态确定回收集</li><li>与CMS的“标记-清除”算法不同，<strong>G1从整体来看是基于“标记-整理”算法实现的收集器，但从局部（两个Region之间）上看又是基于“标记-复制”算法实现</strong>，无论如何，这两种算法都意味着G1运作期间不会产生内存空间碎片，垃圾收集完成之后能提供规整的可用内存。这种特性有利于程序长时间运行，在程序为大对象分配内存时不容易因无法找到连续内存空间而提前触发下一次收集</li><li><strong>G1和CMS都使用卡表来处理跨代指针</strong>，但G1的卡表实现更为复杂，而且堆中每个Region，无论扮演的是新生代还是老年代角色，都必须有一份卡表，这导致<strong>G1的记忆集（和其他内存消耗）可能会占整个堆容量的20%乃至更多的内存空间</strong>，而CMS的卡表就相当简单，只有唯一一份， 只需要处理老年代到新生代的引用， 反过来则不需要</li><li>它们都使用到写屏障，CMS用写后屏障来更新维护卡表；而G1除了使用写后屏障来进行同样的（由于G1的卡表结构复杂，其实是更烦琐的）卡表维护操作外，为了实现原始快照搜索（SATB）算法，还需要使用写前屏障来跟踪并发时的指针变化情况。相比起增量更新算法，<strong>原始快照搜索能够减少并发标记和重新标记阶段的消耗</strong>，避免CMS那样在最终标记阶段停顿时间过长的缺点，但是在用户程序运行过程中确实会产生由跟踪引用变化带来的额外负担。</li></ul><h2 id="5-垃圾收集器常用参数说明"><a href="#5-垃圾收集器常用参数说明" class="headerlink" title="5.垃圾收集器常用参数说明"></a>5.<strong>垃圾收集器常用参数说明</strong></h2><ul><li>UseSerialGC：客户端模式下默认值，使用Serial+Serial old收集器组合进行回收</li><li>UseParNewGC：<strong>JDK9之后不再支持</strong>，使用ParNew+Serial old收集器组合进行回收</li><li>UseConcMarkSweepGC：<strong>JDK 9之前Server模式下的默认值</strong>，使用ParNew + CMS + Serial Old收集器组合进行回收，Serial Old收集器将作为CMS收集器出现“Concurrent Mode Failure“失败后的后备收集器使用</li><li>UseParallelGC：使用Parallel Scavenge + Serial Old (PS MarkSweep)收集器组合进行回收</li><li>UseParallelOldGC：使用Parallel Scavenge + Parallel Old收集器组合进行回收</li><li>SurvivorRatio：指定新生代中Eden区域与Survivor区域的容量比值，默认为8，代表Eden:Survivor=8:1</li><li>PretenureSizeThreshold：直接晋升到老年代的对象大小，设置这个参数后，大于这个参数的对象将直接在老年代分配</li><li>MaxTenuringThreshold：晋升到老年代的对象年龄。每个对象在坚持过一次Minor GC之后，年龄就增加1，当超过这个参数值时就进入老年代</li><li>UseG1GC：使用G1收集器，<strong>这个是JDK 9后的Server模式默认值</strong></li><li>G1HeapRegionSize=n：设置Region大小，并非最终值</li><li>MaxGCPauseMillis：设置G1收集过程目标时间，默认值是200ms，不是硬性条件</li><li>GINewSizePercent：设置G1新生代最小值，默认值是5%</li><li>GIMaxNewSizePercent：设置GG1新生代最大值，默认值是60%</li></ul><h2 id="6-垃圾收集器总结"><a href="#6-垃圾收集器总结" class="headerlink" title="6.垃圾收集器总结"></a>6.垃圾收集器总结</h2><p><img src="https://s2.loli.net/2022/05/06/TZJrMKwncV9lzyP.jpg" alt="preview"></p><h2 id="7-参考文章"><a href="#7-参考文章" class="headerlink" title="7.参考文章"></a>7.参考文章</h2><p>1.浅析经典JVM垃圾收集器(<a href="https://zhuanlan.zhihu.com/p/481256418">https://zhuanlan.zhihu.com/p/481256418</a>)</p>]]></content>
+      
+      
       <categories>
-        <category>操作系统</category>
+          
+          <category> JVM </category>
+          
       </categories>
-      <tags>
-        <tag>windows</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JVM垃圾回收算法</title>
-    <url>/archives/94863c7b.html</url>
-    <content><![CDATA[<h2 id="1-垃圾回收需要做什么"><a href="#1-垃圾回收需要做什么" class="headerlink" title="1.垃圾回收需要做什么"></a>1.垃圾回收需要做什么</h2><p>Java垃圾回收器需要做的三件事：</p>
-<blockquote>
-<p>1、哪些内存需要回收？即如何判断对象已经死亡；</p>
-<p>2、什么时候回收？即GC发生在什么时候？需要了解GC策略，与垃圾回收器实现有关；</p>
-<p>3、如何回收？即需要了解垃圾回收算法，及算法的实现–垃圾回收器；</p>
-</blockquote>
-<h2 id="2-如何判断对象可被回收"><a href="#2-如何判断对象可被回收" class="headerlink" title="2.如何判断对象可被回收"></a>2.如何判断对象可被回收</h2><p>​     垃圾收集器对堆进行回收前，首先要确定堆中的对象哪些还”存活”，哪些已经”死去”。有两种算法，分别是引用计数算法(Recference Counting)和可达性分析算法(Reachability Analysis)。</p>
-<h3 id="2-1-引用计数算法"><a href="#2-1-引用计数算法" class="headerlink" title="2.1 引用计数算法"></a>2.1 引用计数算法</h3><p>2.1.1 算法思路</p>
-<p> 给对象添加一个引用计数器，每当有一个地方引用它，计数器加1；当引用失效，计数器值减1；任何时刻计数器值为0，则认为对象是不再被使用的；</p>
-<h4 id="2-1-2-优点"><a href="#2-1-2-优点" class="headerlink" title="2.1.2 优点"></a>2.1.2 优点</h4><ul>
-<li><p>实现简单、垃圾便于辨识；</p>
-</li>
-<li><p>判定效率高，回收没有延迟。</p>
-</li>
-</ul>
-<h4 id="2-1-2-缺点"><a href="#2-1-2-缺点" class="headerlink" title="2.1.2 缺点"></a>2.1.2 缺点</h4><ul>
-<li>需要单独的字段存储计数器，额外的存储空间开销</li>
-<li>需要更新计数器，伴随着加法和减法操作，带来时间开销</li>
-<li>无法处理循环引用的情况</li>
-</ul>
-<p>循环引用的例子：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RefCountGC</span> <span class="token punctuation">{</span>
-    <span class="token comment">//这个成员属性唯一的作用就是占用一点内存</span>
-    <span class="token keyword">private</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bigSize <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//5MB</span>
-
-    <span class="token class-name">Object</span> reference <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">RefCountGC</span> obj1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">RefCountGC</span> obj2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RefCountGC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        obj1<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj2<span class="token punctuation">;</span>
-        obj2<span class="token punctuation">.</span>reference <span class="token operator">=</span> obj1<span class="token punctuation">;</span>
-
-        obj1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        obj2 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
-        <span class="token comment">//显式的执行垃圾回收行为</span>
-        <span class="token comment">//这里发生GC，obj1和obj2能否被回收？ 能被回收，是因为JVM采用的不是引用计数算法。所以obj1和obj2能被回收。这里反向证明了JVM没有采用引用计数算法。</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">gc</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="2-2-可达性分析算法"><a href="#2-2-可达性分析算法" class="headerlink" title="2.2 可达性分析算法"></a>2.2 可达性分析算法</h3><h4 id="2-2-1-算法思路"><a href="#2-2-1-算法思路" class="headerlink" title="2.2.1 算法思路"></a>2.2.1 算法思路</h4><p>​     通过一系列的GC Roots的对象作为起始点，从这些根节点开始向下搜索，搜索所走过的路径称为引用链（Reference Chain），当一个对象到GC Roots没有任何引用链相连时，则证明此对象是不可用的。</p>
-<p><img src="https://s2.loli.net/2022/05/09/4QZu1AGdpfvkNrR.png" alt="GC Roots"></p>
-<h4 id="2-2-2-GC-Roots对象（两栈两方法）"><a href="#2-2-2-GC-Roots对象（两栈两方法）" class="headerlink" title="2.2.2  GC Roots对象（两栈两方法）"></a>2.2.2  <strong>GC Roots对象</strong>（两栈两方法）</h4><ul>
-<li>虚拟机栈（栈帧中的本地变量表）中引用的对象</li>
-<li>本地方法栈中 JNI（即一般说的 Native 方法）引用的对象</li>
-<li>方法区中类静态属性引用的对象</li>
-<li>方法区中常量引用的对象</li>
-</ul>
-<h4 id="2-2-3-优点"><a href="#2-2-3-优点" class="headerlink" title="2.2.3 优点"></a>2.2.3 优点</h4><p> 更加精确和严谨，可以分析出循环数据结构相互引用的情况；主流的编程语言Java c#的选择。</p>
-<h4 id="2-2-4-缺点"><a href="#2-2-4-缺点" class="headerlink" title="2.2.4 缺点"></a>2.2.4 缺点</h4><ul>
-<li><p>消耗大量时间</p>
-<blockquote>
-<p>从前面可达性分析知道，GC  Roots主要在全局性的引用（常量或静态属性）和执行上下文中（栈帧中的本地变量表）；<br> 要在这些大量的数据中，逐个检查引用，会消耗很多时间；</p>
-</blockquote>
-</li>
-<li><p>GC停顿</p>
-<blockquote>
-<p> 可达性分析期间需要保证整个执行系统的一致性，对象的引用关系不能发生变化；<br> 导致GC进行时必须停顿所有Java执行线程（称为”Stop The World”）；<br> （几乎不会发生停顿的CMS收集器中，枚举根节点时也是必须要停顿的） Stop The World： 是JVM在后台自动发起和自动完成的； 在用户不可见的情况下，把用户正常的工作线程全部停掉；</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="3-判断对象生存还是死亡"><a href="#3-判断对象生存还是死亡" class="headerlink" title="3.判断对象生存还是死亡"></a>3.判断对象生存还是死亡</h2><h3 id="3-1-两次标记过程"><a href="#3-1-两次标记过程" class="headerlink" title="3.1 两次标记过程"></a>3.1 两次标记过程</h3><p>要真正宣告一个对象死亡，至少要经历两次标记过程。</p>
-<p>1、第一次标记</p>
-<p> 在可达性分析后发现到GC Roots没有任何引用链相连时，被第一次标记；并且进行一次筛选：此对象是否必要执行finalize()方法；</p>
-<p>（A）、没有必要执行</p>
-<p> 没有必要执行的情况：（1）、对象没有覆盖finalize()方法；（2）、finalize()方法已经被JVM调用过；这两种情况就可以认为对象已死，可以回收；</p>
-<p>（B）、有必要执行</p>
-<p> 对有必要执行finalize()方法的对象，被放入F-Queue队列中；稍后在JVM自动建立、低优先级的Finalizer线程（可能多个线程）中触发这个方法；</p>
-<p>2、第二次标记</p>
-<p> GC将对F-Queue队列中的对象进行第二次小规模标记；finalize()方法是对象逃脱死亡的最后一次机会： （A）、如果对象在其finalize()方法中重新与引用链上任何一个对象建立关联，第二次标记时会将其移出”即将回收”的集合；（B）、如果对象没有，也可以认为对象已死，可以回收了；<br>        一个对象的finalize()方法只会被系统自动调用一次，经过finalize()方法逃脱死亡的对象，第二次不会再调用；</p>
-<h3 id="3-2-finalize-方法"><a href="#3-2-finalize-方法" class="headerlink" title="3.2  finalize()方法"></a>3.2  finalize()方法</h3><p> finalize()是Object类的一个方法，是Java刚诞生时为了使C/C++程序员容易接受它所做出的一个妥协，但不要当作类似C/C++的析构函数；因为它执行的时间不确定，甚至是否被执行也不确定（Java程序的不正常退出），而且运行代价高昂，无法保证各个对象的调用顺序（甚至有不同线程中调用）；如果需要”释放资源”，可以定义显式的终止方法，并在”try-catch-finally”的finally{}块中保证及时调用，如File相关类的close()方法； 此外，finalize()方法主要有两种用途：</p>
-<p>1、充当”安全网”</p>
-<p> 当显式的终止方法没有调用时，在finalize()方法中发现后发出警告； 但要考虑是否值得付出这样的代价； 如FileInputStream、FileOutputStream、Timer和Connection类中都有这种应用；</p>
-<p>2、与对象的本地对等体有关</p>
-<p> 本地对等体：普通对象调用本地方法（JNI）委托的本地对象；<br>​ 本地对等体不会被GC回收；​<br>​ 如果本地对等体不拥有关键资源，finalize()方法里可以回收它（如C/C++中malloc()，需要调用free()）；​<br>​ 如果有关键资源，必须显式的终止方法；​<br>​ 一般情况下，应尽量避免使用它，甚至可以忘掉它。</p>
-<h2 id="4-HotSpot虚拟机中对象可达性分析的实现"><a href="#4-HotSpot虚拟机中对象可达性分析的实现" class="headerlink" title="4.HotSpot虚拟机中对象可达性分析的实现"></a>4.HotSpot虚拟机中对象可达性分析的实现</h2><h3 id="4-1-枚举根节点"><a href="#4-1-枚举根节点" class="headerlink" title="4.1 枚举根节点"></a>4.1 枚举根节点</h3><p> 枚举根节点也就是查找GC Roots；</p>
-<p> 目前主流JVM都是准确式GC，可以直接得知哪些地方存放着对象引用，所以执行系统停顿下来后，并不需要全部、逐个检查完全局性的和执行上下文中的引用位置；</p>
-<p> 在HotSpot中，是使用一组称为OopMap的数据结构来达到这个目的的；在类加载时，计算对象内什么偏移量上是什么类型的数据；在JIT编译时，也会记录栈和寄存器中的哪些位置是引用；这样GC扫描时就可以直接得知这些信息；</p>
-<h3 id="4-2-安全点"><a href="#4-2-安全点" class="headerlink" title="4.2 安全点"></a>4.2 安全点</h3><h4 id="4-2-1-安全点是什么，为什么需要安全点"><a href="#4-2-1-安全点是什么，为什么需要安全点" class="headerlink" title="4.2.1 安全点是什么，为什么需要安全点"></a>4.2.1 安全点是什么，为什么需要安全点</h4><p> HotSpot在OopMap的帮助下可以快速且准确的完成GC Roots枚举，但是这有一个问题：<br>运行中，非常多的指令都会导致引用关系变化；如果为这些指令都生成对应的OopMap，需要的空间成本太高；<strong>问题解决：</strong></p>
-<p> 只在特定的位置记录OopMap引用关系，这些位置称为安全点（Safepoint）；即程序执行时并非所有地方都能停顿下来开始GC；</p>
-<h4 id="4-2-2-安全点的选定"><a href="#4-2-2-安全点的选定" class="headerlink" title="4.2.2 安全点的选定"></a>4.2.2 安全点的选定</h4><p> 不能太少，否则GC等待时间太长；也不能太多，否则GC过于频繁，增大运行时负荷；所以，基本上是以程序”是否具有让程序长时间执行的特征”为标准选定；”长时间执行”最明显的特征就是指令序列复用，如：方法调用、循环跳转、循环的末尾、异常跳转等； 只有具有这些功能的指令才会产生Safepoint；</p>
-<h4 id="4-2-3-如何在安全点上停顿"><a href="#4-2-3-如何在安全点上停顿" class="headerlink" title="4.2.3 如何在安全点上停顿"></a>4.2.3 如何在安全点上停顿</h4><p> 对于Safepoint，如何在GC发生时让所有线程（不包括JNI线程）运行到其所在最近的Safepoint上再停顿下来？ 主要有两种方案可选：</p>
-<p>（A）、抢先式中断（Preemptive Suspension）</p>
-<p> 不需要线程主动配合，实现如下： （1）、在GC发生时，首先中断所有线程； （2）、如果发现不在Safepoint上的线程，就恢复让其运行到Safepoint上； 现在几乎没有JVM实现采用这种方式；</p>
-<p>（B）、主动式中断（Voluntary Suspension）</p>
-<p> （1）、在GC发生时，不直接操作线程中断，而是仅简单设置一个标志； （2）、让各线程执行时主动去轮询这个标志，发现中断标志为真时就自己中断挂起<br>​ 而轮询标志的地方和Safepoint是重合的；​ 在JIT执行方式下：test指令是HotSpot生成的轮询指令；​ 一条test汇编指令便完成Safepoint轮询和触发线程中断；</p>
-<h3 id="4-3-安全区域"><a href="#4-3-安全区域" class="headerlink" title="4.3 安全区域"></a>4.3 安全区域</h3><h4 id="4-3-1-为什么需要安全区域"><a href="#4-3-1-为什么需要安全区域" class="headerlink" title="4.3.1 为什么需要安全区域"></a>4.3.1 为什么需要安全区域</h4><p> 对于上面的Safepoint还有一个问题： 程序不执行时没有CPU时间（Sleep或Blocked状态），无法运行到Safepoint上再中断挂起；<br>​ 这就需要安全区域来解决；</p>
-<h4 id="4-3-2-什么是安全区域（Safe-Region）"><a href="#4-3-2-什么是安全区域（Safe-Region）" class="headerlink" title="4.3.2 什么是安全区域（Safe Region）"></a>4.3.2 什么是安全区域（Safe Region）</h4><p> 指一段代码片段中，引用关系不会发生变化； 在这个区域中的任意地方开始GC都是安全的；</p>
-<h4 id="4-3-3-如何用安全区域解决问题"><a href="#4-3-3-如何用安全区域解决问题" class="headerlink" title="4.3.3 如何用安全区域解决问题"></a>4.3.3 如何用安全区域解决问题</h4><p> 安全区域解决问题的思路：</p>
-<p> （1）、线程执行进入Safe Region，首先标识自己已经进入Safe Region；</p>
-<p> （2）、线程被唤醒离开Safe Region时，其需要检查系统是否已经完成根节点枚举（或整个GC）；如果已经完成，就继续执行；否则必须等待，直到收到可以安全离开Safe Region的信号通知；</p>
-<p>这样就不会影响标记结果；</p>
-<h2 id="5-垃圾回收算法"><a href="#5-垃圾回收算法" class="headerlink" title="5.垃圾回收算法"></a>5.垃圾回收算法</h2><h3 id="5-1-标记清除"><a href="#5-1-标记清除" class="headerlink" title="5.1 标记清除"></a><strong>5.1 标记清除</strong></h3><p>标记-清除算法将垃圾回收分为两个阶段：<strong>标记阶段和清除阶段</strong>。</p>
-<p><strong>标记</strong>: Collector 从引用根节点开始遍历，<strong>标记所有被引用的对象。一般是在对象的Header中记录为可达对象。</strong><br>       <strong>清除</strong>: Collector对堆内存从头到尾进行线性的遍历，如果发现某个对象在其Header中没有标记为可达对象，则将其回收。这里所谓的清除并不是真的置空，而是把需要清除的对象地址保存在空闲的地址列表里。下次有新对象需要加载时，判断垃圾的位置空间是否够，如果够，就存放。</p>
-<p><img src="https://s2.loli.net/2022/05/09/NcFqAPzhoCGV7TZ.png"><br><strong>适用场合</strong>：</p>
-<ul>
-<li>存活对象较多的情况下比较高效</li>
-<li>适用于年老代（即旧生代）</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>容易产生内存碎片，再来一个比较大的对象时（典型情况：该对象的大小大于空闲表中的每一块儿大小但是小于其中两块儿的和），会提前触发垃圾回收而且需要维护一个空闲列表</li>
-<li>效率不算高（第一次：标记存活对象；第二次：清除没有标记的对象）</li>
-<li>在进行GC的时候，需要停止整个应用程序，导致用户体验差</li>
-</ul>
-<h3 id="5-2-复制算法"><a href="#5-2-复制算法" class="headerlink" title="5.2 复制算法"></a><strong>5.2 复制算法</strong></h3><p>将活着的内存空间分为两块，每次只使用其中一块，在垃圾回收时将正在使用的内存中的存活对象复制到未被使用的内存块中，之后清除正在使用的内存块中的所有对象，交换两个内存的角色，最后完成垃圾收。</p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-fuzhi.png"></p>
-<p>​        在新生代，对常规应用的垃圾回收，一 次通常可以回收70%-99%的内存空间。回收性价比很高。所以现在的商业虚拟机都是用这种收集算法回收新生代。</p>
-<p><strong>适用场合：</strong></p>
-<ul>
-<li>存活对象较少的情况下比较高效</li>
-<li>扫描了整个空间一次（标记存活对象并复制移动）</li>
-<li>适<strong>用于年轻代（即新生代）</strong>：基本上98%的对象是”朝生夕死”的，存活下来的会很少</li>
-</ul>
-<p><strong>优点：</strong></p>
-<ul>
-<li>没有标记和清除过程，实现简单，运行高效</li>
-<li>复制过去以后保证空间的连续性，不会出现“碎片”问题。</li>
-</ul>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>需要两倍的内存空间</li>
-<li>对于G1这种分拆成为大量region的GC，复制而不是移动，意味着GC需要维护region之间对象引用关系，不管是内存占用或者时间开销也不小</li>
-</ul>
-<h3 id="5-3-标记整理"><a href="#5-3-标记整理" class="headerlink" title="5.3  标记整理"></a><strong>5.3  标记整理</strong></h3><p>复制算法的高效性是建立在存活对象少、垃圾对象多的前提下的。</p>
-<p>这种情况在新生代经常发生，但是在老年代更常见的情况是大部分对象都是存活对象。如果依然使用复制算法，由于存活的对象较多，复制的成本也将很高。</p>
-<p>执行过程：</p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-markcompact.png"></p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-compact.png" alt="compact"></p>
-<blockquote>
-<p>标记-压缩算法的最终效果等同于标记-清除算法执行完成后，再进行一次内存碎片整理，因此，也可以把它称为标记-清除-压缩(Mark- Sweep-Compact)算法。<br>        二者的本质差异在于标记-清除算法是一种非移动式的回收算法，标记-压缩是移动式的。是否移动回收后的存活对象是一-项优缺点并存的风险决策。<br>        可以看到，标记的存活对象将会被整理，按照内存地址依次排列，而未被标记的内存会被清理掉。如此一-来，当我们需要给新对象分配内存时，JVM只需要持有一个内存的起始地址即可，这比维护一个空闲列表显然少了许多开销。</p>
-</blockquote>
-<ul>
-<li>优点:<br>消除了标记-清除算法当中，内存区域分散的缺点，我们需要给新对象分配内存时，JVM只 需要持有一个内存的起始地址即可。消除了复制算法当中，内存减半的高额代价。</li>
-<li>缺点:<br>从效率上来说，标记-整理算法要低于复制算法。移动对象的同时，如果对象被其他对象引用，则还需要调整引用的地址。移动过程中，需要全程暂停用户应用程序。即: STW</li>
-</ul>
-<p><strong>对比三种算法</strong></p>
-<p><img src="http://rbgwz8dc4.hd-bkt.clouddn.com/blog/pictures/lajishoujisuanfaduibi.png" alt="lajishoujisuanfaduibi"></p>
-<h3 id="5-4-分代收集算法"><a href="#5-4-分代收集算法" class="headerlink" title="5.4 分代收集算法"></a><strong>5.4 分代收集算法</strong></h3><p>把堆内存分为新生代和老年代，新生代又分为 Eden 区、From Survivor 和 To Survivor。一般新生代中的对象基本上都是朝生夕灭的，每次只有少量对象存活，因此采用复制算法，只需要复制那些少量存活的对象就可以完成垃圾收集；老年代中的对象存活率较高，就采用标记-清除和标记-整理算法来进行回收。</p>
-<p><img src="https://raw.githubusercontent.com/VicoSong/picture/main/pictures/lajishoujisuanfa-fendai.png"></p>
-<p><strong>在这些区域的垃圾回收大概有如下几种情况：</strong></p>
-<blockquote>
-<p>大多数情况下，新的对象都分配在Eden区，当 Eden 区没有空间进行分配时，将进行一次 Minor GC，清理 Eden 区中的无用对象。清理后，Eden 和 From Survivor 中的存活对象如果小于To Survivor 的可用空间则进入To Survivor，否则直接进入老年代）；Eden 和 From Survivor 中还存活且能够进入 To Survivor 的对象年龄增加 1 岁（虚拟机为每个对象定义了一个年龄计数器，每执行一次 Minor GC 年龄加 1），当存活对象的年龄到达一定程度（默认 15 岁）后进入老年代，可以通过 -XX:MaxTenuringThreshold 来设置年龄的值。</p>
-<p>当进行了 Minor GC 后，Eden 还不足以为新对象分配空间（那这个新对象肯定很大），新对象直接进入老年代。</p>
-<p>占 To Survivor 空间一半以上且年龄相等的对象，大于等于该年龄的对象直接进入老年代，比如 Survivor 空间是 10M，有几个年龄为 4 的对象占用总空间已经超过 5M，则年龄大于等于 4 的对象都直接进入老年代，不需要等到 MaxTenuringThreshold 指定的岁数。</p>
-<p>在进行 Minor GC 之前，会判断老年代最大连续可用空间是否大于新生代所有对象总空间，如果大于，说明 Minor GC 是安全的，否则会判断是否允许担保失败，如果允许，判断老年代最大连续可用空间是否大于历次晋升到老年代的对象的平均大小，如果大于，则执行 Minor GC，否则执行 Full GC。</p>
-<p>当在 java 代码里直接调用 System.gc() 时，会建议 <a href="https://so.csdn.net/so/search?q=JVM&amp;spm=1001.2101.3001.7020">JVM</a> 进行 Full GC，但一般情况下都会触发 Full GC，一般不建议使用，尽量让虚拟机自己管理 GC 的策略。</p>
-<p>永久代（方法区）中用于存放类信息，jdk1.6 及之前的版本永久代中还存储常量、静态变量等，当永久代的空间不足时，也会触发 Full GC，如果经过 Full GC 还无法满足永久代存放新数据的需求，就会抛出永久代的内存溢出异常。</p>
-<p>大对象（需要大量连续内存的对象）例如很长的数组，会直接进入老年代，如果老年代没有足够的连续大空间来存放，则会进行 Full GC。</p>
-</blockquote>
-<h2 id="6-参考"><a href="#6-参考" class="headerlink" title="6.参考"></a>6.参考</h2><p>1.JVM：引用计数算法和可达性分析算法(<a href="https://www.zhifou.net/blogdetail/183">https://www.zhifou.net/blogdetail/183</a>)</p>
-<p>2.4种JVM垃圾回收算法详解（<a href="https://mikechen.cc/7102.html%EF%BC%89">https://mikechen.cc/7102.html）</a></p>
-<p>3.深入理解Java虚拟机（四）之垃圾回收算法(<a href="https://www.codenong.com/cs106639755/">https://www.codenong.com/cs106639755/</a>)</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> 垃圾收集器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows快捷操作</title>
+      <link href="/archives/d0277806.html"/>
+      <url>/archives/d0277806.html</url>
+      
+        <content type="html"><![CDATA[<p>1.打开服务面板 ： services.msc</p><p>2.打开运行面板：windos + R</p><p>3.打开任务管理器： ctrl+shfit+esc/taskmgr</p><p>4.所有窗口最小化：Win+D</p><p>5.打开“开始”菜单： ESC+ctrl</p><p>6.快速切换到某个窗口：alt+tab</p><p>7.快速关闭浏览器窗口：ctrl+W</p><p>8.在浏览器的所有窗口快速来回切换：ctrl+tab</p><p>9.打开资源管理器：win+E</p><p>10.清屏：cls</p><p>11.cmd: win+R然后输入cmd</p><p>12.注册表：regedit</p><p>13.计算器：clac</p><p>14.远程桌面连接：mstsc</p><p>15.ODBC数据源管理器：odbcad32</p><p>16.计算机管理：compmgmt.msc</p><p>17.系统配置：msconfig</p><p>18.磁盘管理：diskmgmt.msc</p><p>19.控制面板:control</p><p>20.测试网络是否通：ping</p><p>21.测试是否开放某个端口：telnet [域名或者IP] [端口]</p><p>22.测试网络路由：<strong>tracert</strong> </p><p>23.查看与配置网络：<strong>ipconfig</strong></p><p>24.查看本机DNS服务器/域名ip地址解析：<strong>nslookup</strong></p><p>25.打开记事本：notepad</p><p>26.组策略：gpedit.msc</p><p>27.60秒倒计时关机命令：shutdown</p><p>28.打开资源管理器：explorer</p><p>29.证书管理：certmgr.msc</p><p>30.启动字符映射表:charmap</p><p>31.磁盘碎片整理：dfrg.msc</p><p>32.屏幕分辨率：desk.cpl</p><p>33.Windows防火墙：firewall.cpl</p><p>34.共享文件夹管理器:fsmgmt.msc</p><p>35.设备管理器:hdwwiz.cpl/devmgmt.msc</p><p>36.注销命令：logoff</p><p>37.声音：mmsys.cpl</p><p>38.放大镜实用程序：magnify</p><p>39.显示内存使用情况：mem.exe</p><p>40.打开控制台：mmc</p><p>41.程序和功能：appwiz.cpl</p><p>42.系统信息：msinfo32</p><p>43.画图：mspaint</p><p>44.网络连接：ncpa.cpl</p><p>45.打开记事本：notepad：</p><p>46.计算机性能监测器：perfmon</p><p>47.电源选项：powercfg.cpl</p><p>48.系统还原：rstrui</p><p>49.本地安全策略：secpol.msc</p><p>50.Windows激活，查看系统激活信息：slui</p><p>51.截图工具，支持无规则截图：snippingtool</p><p>52.系统属性：sysdm.cpl</p><p>53.日期和时间：timedate.cpl</p><p>54.写字板：write</p><p>55.垃圾整理：cleanmgr</p><p>56.无线连接：Irprops.cpl</p><p>57.关于Windows：winver</p><p>58.检查DirectX信息:dxdiag</p><p>59.系统组件服务:dcomcnfg</p><p>60.事件查看器:eventvwr</p><p>61.打开屏幕键盘:osk</p><p>62.音量控制程序:sndvol</p>]]></content>
+      
+      
       <categories>
-        <category>JVM</category>
+          
+          <category> 操作系统 </category>
+          
       </categories>
-      <tags>
-        <tag>垃圾回收算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>垃圾收集器介绍</title>
-    <url>/archives/e321971f.html</url>
-    <content><![CDATA[<h2 id="1-查看使用的何种垃圾收集器"><a href="#1-查看使用的何种垃圾收集器" class="headerlink" title="1.查看使用的何种垃圾收集器"></a>1.查看使用的何种垃圾收集器</h2><p><strong>方法一</strong></p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk11\bin&gt;java <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintCommandLineFlags <span class="token operator">-</span>version
-<span class="token operator">-</span>XX:G1ConcRefinementThreads=13 <span class="token operator">-</span>XX:GCDrainStackTargetSize=64 <span class="token operator">-</span>XX:InitialHeapSize=257905728 <span class="token operator">-</span>XX:MaxHeapSize=4126491648 <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintCommandLineFlags <span class="token operator">-</span>XX:ReservedCodeCacheSize=251658240 <span class="token operator">-</span>XX:<span class="token operator">+</span>SegmentedCodeCache <span class="token operator">-</span>XX:<span class="token operator">+</span>UseCompressedClassPointers <span class="token operator">-</span>XX:<span class="token operator">+</span>UseCompressedOops <span class="token operator">-</span>XX:<span class="token operator">+</span>UseG1GC <span class="token operator">-</span>XX:<span class="token operator">-</span>UseLargePagesIndividualAllocation
-java version <span class="token string">"11"</span> 2018-09-25
-Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">)</span>
-Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">,</span> mixed mode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<p><strong>方法二</strong></p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk11\bin&gt;java <span class="token operator">-</span>XX:<span class="token operator">+</span>PrintFlagsFinal <span class="token operator">-</span>version
-<span class="token namespace">[Global flags]</span>
- bool UseG1GC             = true                     <span class="token punctuation">{</span>product<span class="token punctuation">}</span> <span class="token punctuation">{</span>ergonomic<span class="token punctuation">}</span>
-java version <span class="token string">"11"</span> 2018-09-25
-Java<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> SE Runtime Environment 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">)</span>
-Java HotSpot<span class="token punctuation">(</span>TM<span class="token punctuation">)</span> 64-Bit Server VM 18<span class="token punctuation">.</span>9 <span class="token punctuation">(</span>build 11+28<span class="token punctuation">,</span> mixed mode<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>方法三</strong></p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>management<span class="token punctuation">.</span></span><span class="token class-name">GarbageCollectorMXBean</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>lang<span class="token punctuation">.</span>management<span class="token punctuation">.</span></span><span class="token class-name">ManagementFactory</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span></span><span class="token class-name">List</span><span class="token punctuation">;</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> x <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span> args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">GarbageCollectorMXBean</span><span class="token punctuation">&gt;</span></span> l <span class="token operator">=</span> <span class="token class-name">ManagementFactory</span><span class="token punctuation">.</span><span class="token function">getGarbageCollectorMXBeans</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">GarbageCollectorMXBean</span> b <span class="token operator">:</span> l<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>方法四</strong>:Java进程正在运行的情况下</p>
-<pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">D:\app\Java\jdk1<span class="token punctuation">.</span>8<span class="token punctuation">.</span>0_162\bin&gt;jps
-11408 TestJmap
-33076 Eclipse
-27324 Jps
-
-D:\app\Java\jdk1<span class="token punctuation">.</span>8<span class="token punctuation">.</span>0_162\bin&gt;jmap <span class="token operator">-</span>heap 11408
-Attaching to <span class="token keyword">process</span> ID 11408<span class="token punctuation">,</span> please wait<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
-Debugger attached successfully<span class="token punctuation">.</span>
-Server compiler detected<span class="token punctuation">.</span>
-JVM version is 25<span class="token punctuation">.</span>162-b12
-
-<span class="token keyword">using</span> thread-local object allocation<span class="token punctuation">.</span>
-<span class="token keyword">Parallel</span> <span class="token function">GC</span> with 13 thread<span class="token punctuation">(</span>s<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="2-XX：UseParallelGC解释"><a href="#2-XX：UseParallelGC解释" class="headerlink" title="2.-XX：UseParallelGC解释"></a>2.<a href="http://codewenda.com/xx%EF%BC%9Auseparallelgc%E5%92%8C-xx%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9A-useparnewgc/">-XX：UseParallelGC</a>解释</h2><p>引用《深入理解Java虚拟机：JVM高级特性与最佳实践》的介绍:</p>
-<p><img src="https://s2.loli.net/2022/05/06/ePFS3tdLTVUcXZz.png" alt="lajishoujixiangguancanshu"></p>
-<p>表示使用的垃圾收集器是：新生代（Parallel Scavenge），老年代（Ps MarkSweep）组合。</p>
-<p>jdk1.7 默认垃圾收集器Parallel Scavenge（新生代）+Parallel Old（老年代）</p>
-<p>jdk1.8 默认垃圾收集器Parallel Scavenge（新生代）+Parallel Old（老年代）</p>
-<p>jdk1.9 默认垃圾收集器G1</p>
-<h2 id="3-JVM中的垃圾收集器"><a href="#3-JVM中的垃圾收集器" class="headerlink" title="3.JVM中的垃圾收集器"></a>3.JVM中的垃圾收集器</h2><p><img src="https://s2.loli.net/2022/05/06/1B2LAM7RPUJbW5i.png" alt="gcollector"><br>图中展示了7种作用于不同分代的收集器，如果两个收集器之间存在连线，则说明它们可以搭配使用。虚拟机所处的区域则表示它是属于新生代还是老年代收集器。<br>新生代收集器（全部的都是复制算法）：Serial、ParNew、Parallel Scavenge<br>老年代收集器：CMS（标记-清理）、Serial Old（标记-整理）、Parallel Old（标记整理）<br>整堆收集器： G1（一个Region中是标记-清除算法，2个Region之间是复制算法）<br><strong>垃圾收集器中“并发”和“并行”的概念</strong>：<br>1，<strong>并行（Parallel）</strong>：<strong>同一时间有多条这样的线程在协同工作</strong>，通常默认此时用户线程是处于等待状态。<br>2，<strong>并发（Concurrent）</strong>：<strong>同一时间垃圾收集器线程与用户线程都在运行</strong>。</p>
-<p><strong>吞吐量（Throughput）概念</strong></p>
-<p><strong>吞吐量</strong>：CPU用于运行用户代码的时间与CPU总消耗时间的比值，即<strong>吞吐量 = 运行用户代码时间 /（运行用户代码时间 + 垃圾收集时间）</strong>。</p>
-<h3 id="1-Serial收集器"><a href="#1-Serial收集器" class="headerlink" title="1.Serial收集器"></a>1.Serial收集器</h3><p>Serial收集器是最基本的、发展历史最悠久的收集器。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>客户端模式下的默认新生代收集器</li>
-<li>单线程工作（它的“单线程”的意义并不仅仅是说明它<strong>只会使用一个处理器或一条收集线程</strong>去完成垃圾收集工作，更重要的是强调在它进行垃圾收集时，<strong>必须暂停其他所有工作线程</strong>，直到它收集结束）</li>
-<li>简单而高效（与其他收集器的单线程相比）</li>
-<li>对于内存资源受限的环境， 它是所有收集器里额外内存消耗（Memory Footprint）最小的</li>
-<li>对于单核处理器或处理器核心数较少的环境来说，Serial收集器由于没有线程交互的开销，专心做垃圾收集自然可以获得最高的单线程收集效率</li>
-</ul>
-<p><strong>应用场景</strong>：适用于Client模式下的虚拟机。<br><strong>Serial / Serial Old收集器运行示意图</strong><br><img src="https://s2.loli.net/2022/05/06/9WZCBSvKyzsQO2X.png"></p>
-<h3 id="2-ParNew收集器"><a href="#2-ParNew收集器" class="headerlink" title="2.ParNew收集器"></a>2.ParNew收集器</h3><p>Serial收集器的<strong>多线程并行版本</strong>除了使用多线程外其余行为均和Serial收集器一模一样（参数控制、收集算法、Stop The World、对象分配规则、回收策略等）。<br>    <strong>特点：</strong></p>
-<ul>
-<li>JDK 7之前在<strong>服务端模式下首选的新生代收集器</strong>（一个重要原因：除了Serial收集器外， 目前只有它能与 CMS 收集器配合工作）</li>
-<li>ParNew收集器是激活CMS后（使用<code>-XX: +UseConcMarkSweepGC</code>选项） 的默认新生代收集器，也可以使用<code>-XX: +/-UseParNewGC</code>选项来强制指定或者禁用它。</li>
-<li>ParNew收集器在<strong>单核心处理器</strong>的环境中绝对不会有比Serial收集器更好的效果</li>
-<li>默认开启的收集线程数与处理器核心数量相同（可以使用<code>-XX: ParallelGCThreads</code>参数来限制垃圾收集的线程数）</li>
-</ul>
-<p><em>ParNew/Serial Old组合收集器运行示意图如下：</em><br><img src="https://s2.loli.net/2022/05/06/6S18coj7gV3Pqhs.png"></p>
-<h3 id="3-Parallel-Scavenge-收集器"><a href="#3-Parallel-Scavenge-收集器" class="headerlink" title="3.Parallel Scavenge 收集器"></a>3.Parallel Scavenge 收集器</h3><p>Parallel Scavenge 收集器与吞吐量关系密切，故也称为吞吐量优先收集器。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>新生代收集器</li>
-<li>基于标记-复制算法实现</li>
-<li>多线程收集器</li>
-<li>吞吐量优先收集器（Parallel Scavenge收集器其他收集器不同在于：CMS等收集器的关注点是尽可能地<strong>缩短垃圾收集时用户线程的停顿时间</strong>， 而Parallel Scavenge收集器的目标则是<strong>达到一个可控制的吞吐量</strong>）</li>
-<li>自适应调节策略（通过<code>+UseAdaptiveSizePolicy</code>参数激活）</li>
-</ul>
-<p><strong>GC自适应调节策略</strong>：Parallel Scavenge收集器可设置-XX:+UseAdptiveSizePolicy参数。当开关打开时不需要手动指定新生代的大小（-Xmn）、Eden与Survivor区的比例（-XX:SurvivorRation）、晋升老年代的对象年龄（-XX:PretenureSizeThreshold）等，虚拟机会根据系统的运行状况收集性能监控信息，动态设置这些参数以提供最优的停顿时间和最高的吞吐量，这种调节方式称为GC的自适应调节策略。<br>Parallel Scavenge收集器使用两个参数控制吞吐量：</p>
-<ul>
-<li><code>-XX： MaxGCPauseMillis</code>参数：允许的值是一个大于0的毫秒数， 收集器将尽力保证内存回收花费的时间不超过用户设定值。</li>
-<li><code>-XX： GCTimeRatio</code>参数：一个大于0小于100的整数， 也就是垃圾收集时间占总时间的比率， 相当于吞吐量的倒数。 </li>
-<li><code>+UseAdaptiveSizePolicy</code>参数：这是一个开关参数， 当这个参数被激活之后， 就不需要人工指定新生代的大小（-Xmn） 、 Eden与Survivor区的比例（-XX： SurvivorRatio） 、 晋升老年代对象大小（-XX：PretenureSizeThreshold） 等细节参数了， 虚拟机会根据当前系统的运行情况收集性能监控信息，<strong>动态调整</strong>这些参数以提供最合适的停顿时间或者最大的吞吐量。只需要把基本的内存数据设置好（如-Xmx设置最大堆），然后使用<code>-XX： MaxGCPauseMillis</code>参数（更关注最大停顿时间）或<code>-XX： GCTimeRatio</code>（更关注吞吐量） 参数给虚拟机设立一个优化目标， 那具体细节参数的调节工作就由虚拟机完成了。</li>
-</ul>
-<h3 id="4-Serial-Old"><a href="#4-Serial-Old" class="headerlink" title="4.Serial Old"></a>4.Serial Old</h3><p>Serial Old是Serial收集器的老年代版本</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>单线程收集器</li>
-<li>使用标记-整理算法</li>
-<li>主要在<strong>客户端模式</strong>下使用。如果在<strong>服务端模式</strong>下，它也可能有两种用途： 一种是在JDK 1.5以及之前的版本中与Parallel Scavenge收集器搭配使用，另外一种就是作为CMS收集器发生失败时的后备预案，<strong>在并发收集发生Concurrent Mode Failure时使用</strong>。</li>
-</ul>
-<p>Serial / Serial Old收集器工作过程图（Serial收集器图示相同）：<br><img src="https://s2.loli.net/2022/05/06/9WZCBSvKyzsQO2X.png"></p>
-<h3 id="5-Parallel-Old"><a href="#5-Parallel-Old" class="headerlink" title="5.Parallel Old"></a>5.Parallel Old</h3><p>Parallel Old是Parallel Scavenge收集器的老年代版本。<strong>JDK 1.6中发布</strong>。</p>
-<p><strong>特点：</strong></p>
-<ul>
-<li>多线程并发收集</li>
-<li>使用标记-整理算法</li>
-</ul>
-<p>​    <strong>应用场景</strong>：注重高吞吐量以及CPU资源敏感的场合，都可以优先考虑Parallel Scavenge+Parallel Old 收集器。<br>Parallel Scavenge/Parallel Old收集器工作过程图：</p>
-<p><img src="https://s2.loli.net/2022/05/06/axL4crnMeGCAqO2.png" alt="parnew"></p>
-<h3 id="6-CMS收集器"><a href="#6-CMS收集器" class="headerlink" title="6.CMS收集器"></a>6.CMS收集器</h3><p>CMS收集器是一种以获取最短回收停顿时间为目标的收集器。<strong>JDK1.5中发布</strong>。<br>     <strong>特点：</strong></p>
-<ul>
-<li>老年代的收集器</li>
-<li>使用标记-清除算法</li>
-<li>第一款真正意义上支持并发的垃圾收集器，首次实现了让垃圾收集线程与用户线程（基本上）同时工作（并发收集）</li>
-<li>以获取<strong>最短回收停顿时间</strong>为目标的收集器（低停顿）</li>
-</ul>
-<p>​      <strong>应用场景：</strong>：适用于注重服务的响应速度，希望系统停顿时间最短，给用户带来更好的体验等场景下。如web程序、b/s服务。</p>
-<p><strong>收集流程：</strong></p>
-<p>CMS整个过程的四个步骤如下，其中初始标记、 重新标记这两个步骤仍然需要“Stop The World”。</p>
-<ol>
-<li><strong>初始标记</strong>-仅仅只是标记一下GC Roots能直接关联到的对象，速度很快</li>
-<li><strong>并发标记</strong>-从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行</li>
-<li><strong>重新标记</strong>-为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录，这个阶段的停顿时间通常会比初始标记阶段稍长一些， 但也远比并发标记阶段的时间短</li>
-<li><strong>并发清除</strong>-清理删除掉标记阶段判断的已经死亡的对象， 由于不需要移动存活对象， 所以这个阶段也是可以与用户线程同时并发的</li>
-</ol>
-<p> CMS收集器的工作过程图：<br><img src="https://s2.loli.net/2022/05/06/FeAwaDb5JL3ZNgV.png"></p>
-<p><strong>缺点：</strong></p>
-<ul>
-<li>CMS 收集器<strong>对处理器资源非常敏感</strong>。事实上，面向并发设计的程序都对处理器资源比较敏感。在并发阶段，它虽然不会导致用户线程停顿，但却会因为占用了一部分线程而导致应用程序变慢，降低总吞吐量。</li>
-<li>由于CMS收集器<strong>无法处理“浮动垃圾”</strong>， 有可能出现“Con-current Mode Failure”失败进而导致另一次完全“Stop The World”的Full GC的产生。</li>
-<li>CMS是一款基于“标记-清除”算法实现的收集器，这意味着收集结束时<strong>会有大量空间碎片产生</strong>，空间碎片过多时，将会给大对象分配带来很大麻烦，往往会出现老年代还有很多剩余空间， 但就是无法找到足够大的连续空间来分配当前对象， 而不得不提前触发一次Full GC的情况。</li>
-</ul>
-<blockquote>
-<p><strong>关于CMS收集器浮动垃圾的说明：</strong><br>由于在CMS的并发标记和并发清理阶段，用户线程是还在继续运行的，程序在运行自然就还会伴随有新的垃圾对象不断产生，但这一部分垃圾对象是出现在标记过程结束以后，CMS无法在当次收集中处理掉它们， 只好留待下一次垃圾收集时再清理掉。这一部分垃圾就称为“浮动垃圾”。<br>由于在垃圾收集阶段用户线程还需要持续运行， 那就还需要预留足够内存空间提供给用户线程使用， 因此CMS收集器不能像其他收集器那样等待到老年代几乎完全被填满了再进行收集，<strong>必须预留一部分空间供并发收集时的程序运作使用</strong>。</p>
-</blockquote>
-<h3 id="7-G1-收集器（Garbage-First）"><a href="#7-G1-收集器（Garbage-First）" class="headerlink" title="7.G1 收集器（Garbage First）"></a>7.<strong>G1 收集器（Garbage First）</strong></h3><p><strong>特点：</strong></p>
-<ul>
-<li>将堆内存“化整为零”，开创了收集器面向局部收集的设计思路和基于Region的内存布局形式</li>
-<li>面向全堆的收集器，不再需要其他新生代收集器的配合工作</li>
-<li>主要面向服务端应用的垃圾收集器</li>
-<li>G1 仍是遵循分代收集理论设计的， 但其堆内存的布局与其他收集器有非常明显的差异</li>
-<li>G1 不再坚持固定大小以及固定数量的分代区域划分，而是把连续的Java堆划分为多个大小相等的独立Region，每一个Region都可以根据需要，扮演新生代的Eden空间、Survivor空间或者老年代空间</li>
-<li>收集器能够对扮演不同角色的Region采用不同的策略去处理， 这样无论是新创建的对象还是已经存活了一段时间、熬过多次收集的旧对象都能获取很好的收集效果</li>
-<li>Region中还有一类特殊的Humongous区域， 专门用来存储大对象。 <strong>G1认为只要大小超过了一个Region容量一半的对象即可判定为大对象。</strong> 每个Region的大小可以通过参数<code>-XX： G1HeapRegionSize</code>设定， 取值范围为1MB～32MB， 且应为2的N次幂。 而对于那些超过了整个Region容量的超级大对象，将会被存放在N个连续的Humongous Region之中， G1的大多数行为都把Humongous Region作为老年代的一部分来进行看待</li>
-<li>G1收集器之所以能建立可预测的停顿时间模型， 是因为它将Region作为单次回收的最小单元， 即每次收集到的内存空间都是Region大小的整数倍， 这样可以有计划地避免在整个Java堆中进行全区域的垃圾收集</li>
-<li>G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小， 价值即回收所获得的空间大小以及回收所需时间的经验值， 然后在后台维护一个优先级列表， 每次根据用户设定允许的收集停顿时间（使用参数<code>-XX： MaxGCPauseMillis</code>指定， 默认值是200毫秒），优先处理回收价值收益最大的那些Region</li>
-<li>可以由用户指定期望的停顿时间是G1收集器很强大的一个功能，设置不同的期望停顿时间， 可使得G1在不同应用场景中取得关注吞吐量和关注延迟之间的最佳平衡（默认的停顿目标为两百毫秒，通常把期望停顿时间设置为一两百毫秒或者两三百毫秒会是比较合理的）</li>
-</ul>
-<p>G1 收集器 Region 分区示意图如下：</p>
-<p><img src="https://s2.loli.net/2022/05/06/5xLagzlejM63Zph.jpg" alt="img"></p>
-<p>G1 收集器的运作过程主要步骤如下：</p>
-<ul>
-<li><strong>初始标记</strong>：<strong>仅仅只是标记一下GC Roots能直接关联到的对象</strong>，并且修改TAMS指针的值，让下一阶段用户线程并发运行时，能正确地在可用的Region中分配新对象。这个阶段需要停顿线程，但耗时很短，而且是借用进行Minor GC的时候同步完成的，所以G1收集器在这个阶段实际并没有额外的停顿。</li>
-<li><strong>并发标记</strong>：<strong>从GC Root开始对堆中对象进行可达性分析，递归扫描整个堆里的对象图，找出要回收的对象</strong>，这阶段耗时较长，但可与用户程序并发执行。<strong>当对象图扫描完成以后，还要重新处理SATB记录下的在并发时有引用变动的对象。</strong></li>
-<li><strong>最终标记</strong>：对用户线程做另一个短暂的暂停，用于<strong>处理并发阶段结束后仍遗留下来的最后那少量的SATB记录。</strong></li>
-<li><strong>筛选回收</strong>： 负责更新Region的统计数据，对各个Region的回收价值和成本进行排序， 根据用户所期望的停顿时间来制定回收计划， 可以自由选择任意多个Region构成回收集，然后<strong>把决定回收的那一部分Region的存活对象复制到空的Region中，再清理掉整个旧Region的全部空间</strong>。这里的操作涉及存活对象的移动，是必须暂停用户线程，由多条收集器线程并行完成的。</li>
-</ul>
-<p>从上述阶段的描述可以看出， G1收集器除了并发标记外， 其余阶段也是要完全暂停用户线程的，换言之， 它并非纯粹地追求低延迟， <strong>官方给它设定的目标是在延迟可控的情况下获得尽可能高的吞吐量。</strong></p>
-<p>G1 收集器运行示意图如下：</p>
-<p><img src="https://s2.loli.net/2022/05/06/9TBaQpjKJLEYzOH.jpg" alt="img"></p>
-<h2 id="4-G1-收集器与-CMS-收集器的异同"><a href="#4-G1-收集器与-CMS-收集器的异同" class="headerlink" title="4.G1 收集器与 CMS 收集器的异同"></a>4.<strong>G1 收集器与 CMS 收集器的异同</strong></h2><ul>
-<li>两者都非常关注停顿时间的控制</li>
-<li>G1 可以指定最大停顿时间、 分Region的内存布局、 按收益动态确定回收集</li>
-<li>与CMS的“标记-清除”算法不同，<strong>G1从整体来看是基于“标记-整理”算法实现的收集器，但从局部（两个Region之间）上看又是基于“标记-复制”算法实现</strong>，无论如何，这两种算法都意味着G1运作期间不会产生内存空间碎片，垃圾收集完成之后能提供规整的可用内存。这种特性有利于程序长时间运行，在程序为大对象分配内存时不容易因无法找到连续内存空间而提前触发下一次收集</li>
-<li><strong>G1和CMS都使用卡表来处理跨代指针</strong>，但G1的卡表实现更为复杂，而且堆中每个Region，无论扮演的是新生代还是老年代角色，都必须有一份卡表，这导致<strong>G1的记忆集（和其他内存消耗）可能会占整个堆容量的20%乃至更多的内存空间</strong>，而CMS的卡表就相当简单，只有唯一一份， 只需要处理老年代到新生代的引用， 反过来则不需要</li>
-<li>它们都使用到写屏障，CMS用写后屏障来更新维护卡表；而G1除了使用写后屏障来进行同样的（由于G1的卡表结构复杂，其实是更烦琐的）卡表维护操作外，为了实现原始快照搜索（SATB）算法，还需要使用写前屏障来跟踪并发时的指针变化情况。相比起增量更新算法，<strong>原始快照搜索能够减少并发标记和重新标记阶段的消耗</strong>，避免CMS那样在最终标记阶段停顿时间过长的缺点，但是在用户程序运行过程中确实会产生由跟踪引用变化带来的额外负担。</li>
-</ul>
-<h2 id="5-垃圾收集器常用参数说明"><a href="#5-垃圾收集器常用参数说明" class="headerlink" title="5.垃圾收集器常用参数说明"></a>5.<strong>垃圾收集器常用参数说明</strong></h2><ul>
-<li>UseSerialGC：客户端模式下默认值，使用Serial+Serial old收集器组合进行回收</li>
-<li>UseParNewGC：<strong>JDK9之后不再支持</strong>，使用ParNew+Serial old收集器组合进行回收</li>
-<li>UseConcMarkSweepGC：<strong>JDK 9之前Server模式下的默认值</strong>，使用ParNew + CMS + Serial Old收集器组合进行回收，Serial Old收集器将作为CMS收集器出现“Concurrent Mode Failure“失败后的后备收集器使用</li>
-<li>UseParallelGC：使用Parallel Scavenge + Serial Old (PS MarkSweep)收集器组合进行回收</li>
-<li>UseParallelOldGC：使用Parallel Scavenge + Parallel Old收集器组合进行回收</li>
-<li>SurvivorRatio：指定新生代中Eden区域与Survivor区域的容量比值，默认为8，代表Eden:Survivor=8:1</li>
-<li>PretenureSizeThreshold：直接晋升到老年代的对象大小，设置这个参数后，大于这个参数的对象将直接在老年代分配</li>
-<li>MaxTenuringThreshold：晋升到老年代的对象年龄。每个对象在坚持过一次Minor GC之后，年龄就增加1，当超过这个参数值时就进入老年代</li>
-<li>UseG1GC：使用G1收集器，<strong>这个是JDK 9后的Server模式默认值</strong></li>
-<li>G1HeapRegionSize=n：设置Region大小，并非最终值</li>
-<li>MaxGCPauseMillis：设置G1收集过程目标时间，默认值是200ms，不是硬性条件</li>
-<li>GINewSizePercent：设置G1新生代最小值，默认值是5%</li>
-<li>GIMaxNewSizePercent：设置GG1新生代最大值，默认值是60%</li>
-</ul>
-<h2 id="6-垃圾收集器总结"><a href="#6-垃圾收集器总结" class="headerlink" title="6.垃圾收集器总结"></a>6.垃圾收集器总结</h2><p><img src="https://s2.loli.net/2022/05/06/TZJrMKwncV9lzyP.jpg" alt="preview"></p>
-<h2 id="7-参考文章"><a href="#7-参考文章" class="headerlink" title="7.参考文章"></a>7.参考文章</h2><p>1.浅析经典JVM垃圾收集器(<a href="https://zhuanlan.zhihu.com/p/481256418">https://zhuanlan.zhihu.com/p/481256418</a>)</p>
-]]></content>
+      
+      
+        <tags>
+            
+            <tag> windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hexo+github搭建个人博客</title>
+      <link href="/archives/be8880ea.html"/>
+      <url>/archives/be8880ea.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-安装node-js"><a href="#1-安装node-js" class="headerlink" title="1.安装node.js"></a>1.安装node.js</h2><p>下载地址：</p><p>[Node.js]: </p><p>检查是否安装成功：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;node <span class="token operator">-</span>vv16<span class="token punctuation">.</span>14<span class="token punctuation">.</span>0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="2-安装Git"><a href="#2-安装Git" class="headerlink" title="2.安装Git"></a>2.安装Git</h2><p>下载地址：</p><p>​    检查是否安装成功</p><p>​        右键菜单出现Git Bash Here说明安装成功</p><p>安装：hexo-deployer-git</p><pre class="line-numbers language-none"><code class="language-none">$ npm install hexo-deployer-git --save<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h2 id="3-安装Hexo"><a href="#3-安装Hexo" class="headerlink" title="3.安装Hexo"></a>3.安装Hexo</h2><p>安装</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">C:\Users\vico&gt;npm install <span class="token operator">-</span>g hexo-<span class="token function">cli</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>​    安装完成后进入想存放blog的目录右键Git Bash Here</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell"><span class="token comment">## 建站</span>$ hexo init blogINFO  Cloning hexo-starter https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com/hexojs/hexo-starter<span class="token punctuation">.</span>gitINFO  Install dependenciesINFO  <span class="token function">Start</span> blogging with Hexo!$ cd blog$ npm install<span class="token comment">## 生成静态文件</span>$ npm g<span class="token comment">## 启动服务</span>$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>​    </p><h2 id="4-更换主题"><a href="#4-更换主题" class="headerlink" title="4.更换主题"></a>4.更换主题</h2><p>主题地址：</p><p>点击选中的主题跳转到Github可以选择下载成zip解压到theme目录下</p><p>或者在theme目录下执行git clone(git和先和github关联起来)</p><pre class="line-numbers language-none"><code class="language-none">$ git clone git@github.com:XPoet/hexo-theme-keep.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>​    打开_config.yml找到theme修改为下载主题的名字</p><p>​        theme: hexo-theme-keep</p><h2 id="5-关联Github"><a href="#5-关联Github" class="headerlink" title="5.关联Github"></a>5.关联Github</h2><p>​    登录个人Github点击New repository填好仓库名点击 Create repository</p><p>   复制新建仓库的地址然后打开_config.yml配置如下</p><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties"><span class="token attr-name">deploy</span><span class="token punctuation">:</span><span class="token attr-name">  type</span><span class="token punctuation">:</span> <span class="token attr-value">'git'</span><span class="token attr-name">  repo</span><span class="token punctuation">:</span> <span class="token attr-value">https://github.com/VicoSong/vico.github.io.git</span><span class="token attr-name">  branch</span><span class="token punctuation">:</span> <span class="token attr-value">master</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><p>打开命令行输入：</p><pre class="line-numbers language-none"><code class="language-none">$ hexo g$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>访问 ：<a href="https://github.com/VicoSong/vico.github.io.git%E5%8F%AF%E4%BB%A5%E7%9C%8B%E5%88%B0%E6%95%88%E6%9E%9C">https://github.com/VicoSong/vico.github.io.git可以看到效果</a></p><p>参考：</p>]]></content>
+      
+      
       <categories>
-        <category>JVM</category>
+          
+          <category> 博客 </category>
+          
       </categories>
-      <tags>
-        <tag>垃圾收集器</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
